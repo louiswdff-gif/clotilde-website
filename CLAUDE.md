@@ -24,62 +24,53 @@ Site portfolio/présentation pour **Clotilde Bouttet** (`@clotilde.frenchhair`),
 
 ## Design system
 
-### Palette (tokens CSS sur `:root`)
+### Direction
+Éditorial « magazine de mode », **dark-first** (thème clair via le bouton en haut à droite, mémorisé en localStorage).
+Pas de cartes, pas d'ombres, pas de dégradés criards, pas d'emoji : typographie, filets fins, vraies photos.
+
+### Palette (tokens CSS sur `:root` = sombre ; `:root[data-theme="light"]` = clair)
 
 ```css
---bg:    #F9F5F1   /* crème clair, fond principal */
---bg2:   #EFE6DF   /* crème légèrement plus foncé, sections alternées */
---ink:   #120A08   /* quasi-noir chaud, texte principal */
---mid:   #6A4F49   /* brun moyen, liens nav, labels */
---mute:  #A08276   /* brun clair, texte secondaire */
---blush: #C2847C   /* rose terracotta, accent principal */
---bl-lt: #DFC4BE   /* rose poudré clair, bordures */
---bl-p:  #F3EBE8   /* rose très pâle, backgrounds cards */
+--bg #0E0807  --bg2 #170E0C  --ink #F2E8E4  --mid #C4A09A
+--mute #8E6E66  --blush #C8908A  --bl-lt #3A2420  --bl-p #1F1210
+--stage #0B0605   /* fond du hero 3D, toujours sombre */
 ```
-
-Dark mode complet défini dans le fichier.
+Toujours maintenir les deux blocs (sombre + clair).
 
 ### Typographie
+- Titres : `Bodoni Moda` (300, italique pour les mots accentués en `--blush`)
+- Corps : `DM Sans` 300/400/500
 
-- Titres : `Bodoni Moda` — style éditorial mode/luxe
-- Corps : `DM Sans` — lisible, moderne, discret
-
-### Principe design
-
-- **Éditorial, photo-first, asymétrique** — les photos parlent, le texte soutient
-- **Pas de card-box** : overlays caption sur hover, pas de cadres blancs autour des photos
-- **Grille masonry CSS** via `grid-row: span 2` et `grid-column: span 2`
-- Fade-in au scroll via `IntersectionObserver`
+### Hero 3D — chevelure WebGL
+- `<canvas id="hair">` + module `Hair` dans le script : WebGL brut (pas de librairie), un seul draw call.
+- ~1500 mèches (900 sur mobile), chacune passe sur un crâne sphérique puis tombe avec ondulations, vent, et un « peigne » qui écarte les mèches autour de la souris.
+- Couleurs racine → longueurs → pointes peintes, définies dans le tableau `shades` (boutons « Try a shade »).
+- Fallback sans WebGL : classe `no-gl` → photo `salon.jpg` en fond. `prefers-reduced-motion` → image fixe.
+- Animation en pause quand le hero n'est pas visible.
 
 ---
 
 ## Structure du fichier `index.html`
 
-### Sections (dans l'ordre)
-
-1. **Nav** — logo "Atelier Clotilde" + liens + bouton "Book a Session"
-2. **Hero** — grille 48/52, texte gauche + photo Clotilde droite
-3. **Realizations** — filtres par catégorie + grille éditoriale + modal détail
-4. **Videos** — grille de vidéos avec thumbnail + player
-5. **About** — portrait + bio + chiffres clés
-6. **Contact** — Instagram, email, localisation
-7. **Footer**
+1. **Nav** — logo, liens, « Book » (Instagram), bouton thème, burger mobile
+2. **Hero** — chevelure 3D + titre « Colour, by hand. » + sélecteur de nuances
+3. **Marquee** — techniques qui défilent
+4. **Statement** — phrase qui s'allume mot à mot au scroll + photo salon en parallaxe
+5. **Work** — galerie horizontale épinglée (desktop) / grille (mobile, reduced-motion), filtres, lightbox `<dialog>`
+6. **Process** — 3 étapes (Consultation, Hand-painting, Gloss & finish)
+7. **Videos** — masquée tant que `vids` est vide
+8. **About** — portrait + bio + services
+9. **Contact** — CTA Instagram, localisations
+10. **Footer** — grand wordmark en contour
 
 ### Données JS (arrays à maintenir)
 
 ```js
-const reals = [
-  {id, cat, name, img, desc}
-  // cat: 'balayage' | 'colour' | 'cut' | 'bridal' | 'style'
-  // img: chemin relatif depuis la racine ex: 'images/real_11.jpg'
-];
-
-const vids = [
-  {id, title, desc, src, thumb}
-  // src: 'videos/vid_01.mp4'
-  // thumb: 'images/thumb_01.jpg'
-];
+const reals = [ {id, cat, name, img, desc} ];   // cat: 'balayage' | 'colour' | 'cut' | 'bridal' | 'style'
+const vids  = [ {id, title, desc, src, thumb} ]; // src: 'videos/vid_01.mp4'
+const shades = [ {name, c:[root, mid, ends]} ];  // couleurs de la chevelure 3D
 ```
+Les filtres n'affichent que les catégories présentes dans `reals`.
 
 ---
 
@@ -118,12 +109,11 @@ Le dossier `videos/` est vide pour l'instant. Quand Clotilde fournit des vidéos
 
 ## Ce qu'il faut améliorer / ce qui est à faire
 
-1. **Vrai portrait détouré** pour la section hero — idéalement fond transparent (`.png`)
-2. **Ajouter des vidéos** quand Clotilde les fournit
-3. **Vrai lien "Book a Session"** — ajouter l'URL Calendly ou autre système de réservation
-4. **Coordonnées réelles** — email, numéro WhatsApp, adresse du salon
-5. **SEO** — meta description, og:image, sitemap
-6. **Déploiement** — le site est prêt à être déployé sur Vercel, Netlify ou GitHub Pages en drag & drop
+1. **Ajouter des vidéos** quand Clotilde les fournit
+2. **Lien de réservation** — pour l'instant tout pointe vers Instagram ; remplacer si Planity/Calendly
+3. **Coordonnées réelles** — téléphone, email, adresse du salon (retirés du site tant qu'ils ne sont pas fournis)
+4. **Vérifier les textes** — noms/descriptions des réalisations et « twelve years » à valider par Clotilde
+5. **SEO** — sitemap.xml, robots.txt et URL absolues (og:image, canonical) une fois le domaine connu
 
 ---
 

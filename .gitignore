@@ -1,3 +1,9 @@
 .DS_Store
 *.DS_Store
 .claude/
+
+# Raw camera originals (large, contain GPS) — never commit
+images/IMG_*
+images/Facetune*
+*.HEIC
+*.heic

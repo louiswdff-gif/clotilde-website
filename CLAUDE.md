@@ -83,7 +83,7 @@ const reals = [ {id, cat, name, img, desc} ];   // cat: 'balayage' | 'colour' | 
 | `images/real_19.jpg` | Brunette longue, noir et blanc | style |
 | `images/real_20.jpg` | Carré long (lob) balayage | cut |
 | `images/real_21.jpg` | Blond doré racine ombrée | colour |
-| `images/clotilde_cut.webp` | Clotilde détourée (fond transparent) | accueil |
+| `images/clotilde_cut.webp` | Clotilde (pantalon rose) coiffant une cliente, détourée, fond transparent — source IMG_5646 | accueil |
 | `images/salon.jpg` | Photo salon d'origine (non utilisée actuellement) | — |
 | `images/clotilde_portrait.jpg` | Portrait de Clotilde | portrait (About) |
 
@@ -104,7 +104,7 @@ Le dossier `videos/` est vide pour l'instant. Quand Clotilde fournit des vidéos
 
 ## Ce qu'il faut améliorer / ce qui est à faire
 
-1. **Photo d'accueil en meilleure qualité** — idéalement Clotilde en train de couper, photographiée en haute résolution sur fond uni
+1. **Photo d'accueil** — remplacée par IMG_5646 (meilleure qualité) ; une version encore plus grande serait un plus
 2. **Lien de réservation** — pour l'instant tout pointe vers Instagram ; remplacer si Planity/Calendly
 3. **Coordonnées réelles** — téléphone, email, adresse du salon (retirés du site tant qu'ils ne sont pas fournis)
 4. **Vérifier les textes** — noms/descriptions des réalisations et « twelve years » à valider par Clotilde

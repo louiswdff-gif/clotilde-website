@@ -71,7 +71,7 @@ Dark mode complet défini dans le fichier.
 const reals = [
   {id, cat, name, img, desc}
   // cat: 'balayage' | 'colour' | 'cut' | 'bridal' | 'style'
-  // img: chemin relatif depuis la racine ex: 'images/real_01.jpg'
+  // img: chemin relatif depuis la racine ex: 'images/real_11.jpg'
 ];
 
 const vids = [
@@ -87,16 +87,21 @@ const vids = [
 
 | Fichier | Description | Catégorie |
 |---------|-------------|-----------|
-| `images/real_01.jpg` | Boucles naturelles balayage miel | balayage |
-| `images/real_04.jpg` | Brunette warm caramel (formation Revlon) | colour |
-| `images/real_05.jpg` | Long lisse balayage blonde | balayage |
-| `images/real_06.jpg` | Blond doré wavy vue de côté | balayage |
-| `images/real_07.jpg` | Long sandy blonde balayage | balayage |
-| `images/real_08.jpg` | Bob mi-long blonde | cut |
-| `images/real_09.jpg` | Bob brunette lustré | cut |
-| `images/real_10.jpg` | Fondu foncé vers caramel + boucles | balayage |
-| `images/clotilde_hero.jpg` | Portrait Clotilde (photo de profil IG) | hero |
-| `images/clotilde_portrait.jpg` | Portrait Clotilde (about section) | portrait |
+| `images/real_11.jpg` | Bronde soft, vue de profil | balayage |
+| `images/real_12.jpg` | Brunette vers cuivré (session Revlon) | colour |
+| `images/real_13.jpg` | Boucles avec mèches dorées | balayage |
+| `images/real_14.jpg` | Balayage miel mi-long | balayage |
+| `images/real_15.jpg` | Blond lumineux ondulé | colour |
+| `images/real_16.jpg` | Long balayage, vue de face (aussi og:image) | balayage |
+| `images/real_17.jpg` | Melt racine naturelle vers pointes claires | balayage |
+| `images/real_18.jpg` | Brunette ondulée brillante | style |
+| `images/real_19.jpg` | Brunette longue, noir et blanc | style |
+| `images/real_20.jpg` | Carré long (lob) balayage | cut |
+| `images/real_21.jpg` | Blond doré racine ombrée | colour |
+| `images/salon.jpg` | Clotilde au travail dans le salon | hero |
+| `images/clotilde_portrait.jpg` | Portrait de Clotilde | portrait (About) |
+
+Les originaux d'appareil photo (`IMG_*`, `*.HEIC`) sont ignorés par git : ils sont lourds et contiennent la position GPS. Toujours en faire une version web (max 1200 px, ~150 Ko, sans EXIF) avant de les utiliser.
 
 **Pour ajouter de nouvelles photos** : les déposer dans `images/`, puis ajouter une entrée dans le tableau `reals` dans `index.html`.
 

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Atelier Clotilde">
 <meta property="og:title" content="Atelier Clotilde — Master Colourist">
 <meta property="og:description" content="Bespoke balayage, colour, cuts and bridal hair by Clotilde Bouttet in Paris and Thonon-les-Bains.">
-<meta property="og:image" content="images/real_05.jpg">
+<meta property="og:image" content="images/real_16.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -473,7 +473,7 @@ footer {
   </div>
   <div class="hero-photo" id="heroPhoto">
     <div class="hero-ph-hint" id="heroPh">
-      <span>images/clotilde_hero.png<br>(fond détouré recommandé)</span>
+      <span>Atelier Clotilde</span>
     </div>
   </div>
 </section>
@@ -612,7 +612,7 @@ footer {
   "@type":"HairSalon",
   "name":"Atelier Clotilde",
   "description":"Bespoke balayage, colour, precision cuts and bridal hair by master colourist Clotilde Bouttet.",
-  "image":"images/real_05.jpg",
+  "image":"images/real_16.jpg",
   "areaServed":[{"@type":"City","name":"Paris"},{"@type":"City","name":"Thonon-les-Bains"}],
   "sameAs":["https://www.instagram.com/clotilde.frenchhair/"],
   "founder":{"@type":"Person","name":"Clotilde Bouttet","jobTitle":"Master Colourist","sameAs":["https://www.instagram.com/clotilde.frenchhair/"]}
@@ -621,15 +621,17 @@ footer {
 <script>
 /* ── Data ── */
 const reals = [
-  {id:1,cat:'balayage',name:'Curly Balayage',         img:'images/real_01.jpg',desc:'Natural curls enhanced with warm honey tones. Balayage painted to follow each curl\'s natural movement for effortless, radiant dimension.'},
-  {id:2,cat:'balayage',name:'Blonde Lumineux',        img:'images/real_05.jpg',desc:'Long, straight blonde balayage with seamless light-to-gold transition. Lightweight, luminous, and deeply nourishing finish.'},
-  {id:3,cat:'cut',     name:'Precision Bob',          img:'images/real_08.jpg',desc:'Medium-length blonde bob with internal texture that moves naturally. The cut maximises volume and falls perfectly at every angle.'},
-  {id:4,cat:'colour',  name:'Warm Brunette Balayage', img:'images/real_04.jpg',desc:'Rich brunette base lifted to warm caramel ends. Colour built with master precision for a naturally sun-touched result.'},
-  {id:5,cat:'balayage',name:'Golden Wave Balayage',   img:'images/real_06.jpg',desc:'Warm amber and gold tones melted through dark roots. Wavy styling brings out the depth and richness of this dimensional colour.'},
-  {id:6,cat:'balayage',name:'Sandy Blonde',           img:'images/real_07.jpg',desc:'Long sandy blonde balayage on naturally dark hair. Soft, natural-looking highlights that create movement and three-dimensional shine.'},
-  {id:7,cat:'cut',     name:'Brunette Bob',           img:'images/real_09.jpg',desc:'Sleek brunette bob with a rounded silhouette. Precision cut with a flawless finish — structured, contemporary, and utterly polished.'},
-  {id:8,cat:'balayage',name:'Caramel Melt',           img:'images/real_10.jpg',desc:'Dark root to warm caramel ends, curled to highlight the depth. A perfectly blended melt that works with the natural hair texture.'},
-  {id:9,cat:'colour',  name:'Colour & Gloss',         img:'images/real_06.jpg',desc:'Warm golden gloss finish for a client wanting to deepen their natural tone. Rich, dimensional, and incredibly shiny result.'},
+  {id:11,cat:'balayage',name:'Soft Bronde',            img:'images/real_11.jpg',desc:'Hand-painted bronde with face-framing brightness. Lived-in colour designed to grow out softly, with no harsh line at the root.'},
+  {id:16,cat:'balayage',name:'Sunlit Lengths',         img:'images/real_16.jpg',desc:'Long, flowing balayage with ribbons of light through the mid-lengths. Dimensional, natural and finished with soft waves.'},
+  {id:15,cat:'colour',  name:'Bright Blonde',          img:'images/real_15.jpg',desc:'A luminous, high-contrast blonde lifted with care for the hair\'s integrity. Bold brightness with a soft, glossy finish.'},
+  {id:13,cat:'balayage',name:'Curl Highlights',        img:'images/real_13.jpg',desc:'Warm golden pieces placed curl by curl. Colour that celebrates natural texture and adds light to every spiral.'},
+  {id:12,cat:'colour',  name:'Copper Brunette',        img:'images/real_12.jpg',desc:'Rich brunette melting into warm copper ends, created at a Revlon Professional session. Deep, glowing and full of movement.'},
+  {id:20,cat:'cut',     name:'Balayage Lob',           img:'images/real_20.jpg',desc:'A textured shoulder-length cut paired with soft, blended balayage. Light, modern and effortless to style.'},
+  {id:17,cat:'balayage',name:'Blended Melt',           img:'images/real_17.jpg',desc:'Seamless transition from natural root to creamy ends. A melt built for depth at the top and brightness where the light falls.'},
+  {id:18,cat:'style',   name:'Brunette Waves',         img:'images/real_18.jpg',desc:'Glossy dark brunette with loose, polished waves. Healthy shine and movement from root to tip.'},
+  {id:21,cat:'colour',  name:'Golden Blonde',          img:'images/real_21.jpg',desc:'Warm golden blonde with a soft shadow root. Bright, dimensional and tailored to complement the skin tone.'},
+  {id:14,cat:'balayage',name:'Honey Balayage',         img:'images/real_14.jpg',desc:'Mid-length hair brightened with honey-toned balayage. Gentle contrast for a sun-kissed, natural result.'},
+  {id:19,cat:'style',   name:'Dark Length',            img:'images/real_19.jpg',desc:'Long, deep brunette hair styled in soft, voluminous waves. Pure shine, pure movement.'},
 ];
 const vids = [
   // Add entries when Clotilde provides videos, e.g.:
@@ -746,13 +748,13 @@ function loadHero(src){
   tryImg(src,img=>{
     const wrap=document.getElementById('heroPhoto');
     const ph=document.getElementById('heroPh');
-    img.alt='Clotilde Bouttet, master colourist';img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;';
+    img.alt='Inside the Atelier Clotilde salon';img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%;';
     if(ph)ph.hidden=true;
     wrap.style.position='relative';
     wrap.insertBefore(img,wrap.firstChild);
   });
 }
-loadHero('images/clotilde_hero.jpg');
+loadHero('images/salon.jpg');
 
 /* ── About portrait ── */
 tryImg('images/clotilde_portrait.jpg',img=>{
@@ -770,6 +772,7 @@ const io=new IntersectionObserver(entries=>{
 document.querySelectorAll('.fi').forEach(el=>io.observe(el));
 
 /* ── Init ── */
+document.querySelectorAll('.f').forEach(b=>{if(b.dataset.f!=='all'&&!reals.some(r=>r.cat===b.dataset.f))b.hidden=true;});
 renderReals('all');
 if(vids.length){renderVids();}else{document.querySelectorAll('[data-vid]').forEach(el=>el.hidden=true);}
 </script>

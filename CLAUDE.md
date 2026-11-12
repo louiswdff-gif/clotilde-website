@@ -24,53 +24,47 @@ Site portfolio/présentation pour **Clotilde Bouttet** (`@clotilde.frenchhair`),
 
 ## Design system
 
-### Direction
-Éditorial « magazine de mode », **dark-first** (thème clair via le bouton en haut à droite, mémorisé en localStorage).
-Pas de cartes, pas d'ombres, pas de dégradés criards, pas d'emoji : typographie, filets fins, vraies photos.
+### Direction (validée par le client, nov. 2026)
+Beige clair, éditorial, **pas de codes « template »** : pas de bandeau défilant, pas d'étapes numérotées,
+pas de chiffres clés, pas de cartes ni d'ombres. Clotilde est le sujet principal.
 
-### Palette (tokens CSS sur `:root` = sombre ; `:root[data-theme="light"]` = clair)
-
+### Palette (tokens sur `:root`, thème clair uniquement)
 ```css
---bg #0E0807  --bg2 #170E0C  --ink #F2E8E4  --mid #C4A09A
---mute #8E6E66  --blush #C8908A  --bl-lt #3A2420  --bl-p #1F1210
---stage #0B0605   /* fond du hero 3D, toujours sombre */
+--bg #EDE5DA  --paper #F5F0E9  --ink #2B231E  --mid #5F5046
+--mute #85746A  --accent #9A6650  --line #D6CABC
 ```
-Toujours maintenir les deux blocs (sombre + clair).
 
 ### Typographie
-- Titres : `Bodoni Moda` (300, italique pour les mots accentués en `--blush`)
-- Corps : `DM Sans` 300/400/500
+Titres `Bodoni Moda` 400 (italique pour les mots en `--accent`), corps `DM Sans` 300.
 
-### Hero 3D — chevelure WebGL
-- `<canvas id="hair">` + module `Hair` dans le script : WebGL brut (pas de librairie), un seul draw call.
-- ~1500 mèches (900 sur mobile), chacune passe sur un crâne sphérique puis tombe avec ondulations, vent, et un « peigne » qui écarte les mèches autour de la souris.
-- Couleurs racine → longueurs → pointes peintes, définies dans le tableau `shades` (boutons « Try a shade »).
-- Fallback sans WebGL : classe `no-gl` → photo `salon.jpg` en fond. `prefers-reduced-motion` → image fixe.
-- Animation en pause quand le hero n'est pas visible.
+### Fil conducteur : la ligne de coupe + ciseaux 3D
+- Une ligne pointillée (SVG `#cutSvg`) serpente sur toute la page, **entre** les photos et les textes.
+- Elle est construite à partir des attributs `data-cut="x@y x@y"` (x = fraction de largeur de page,
+  y = fraction de hauteur de l'élément). Sur mobile (< 900px) elle passe dans les marges.
+- Des ciseaux 3D (three.js r128, CDN cdnjs) suivent la ligne au scroll, s'ouvrent/se ferment
+  (« snip ») et la ligne derrière eux devient pleine (= découpée).
+- Défilement fluide : Lenis 1.1.13 (CDN jsdelivr). Désactivé si `prefers-reduced-motion`.
+
+### Accueil
+Prénom « Clotilde » en très grand, Clotilde détourée devant (`images/clotilde_cut.webp`,
+fond transparent, fondu à gauche et en bas). Sur mobile : prénom, puis photo, puis texte (empilés).
 
 ---
 
 ## Structure du fichier `index.html`
 
-1. **Nav** — logo, liens, « Book » (Instagram), bouton thème, burger mobile
-2. **Hero** — chevelure 3D + titre « Colour, by hand. » + sélecteur de nuances
-3. **Marquee** — techniques qui défilent
-4. **Statement** — phrase qui s'allume mot à mot au scroll + photo salon en parallaxe
-5. **Work** — galerie horizontale épinglée (desktop) / grille (mobile, reduced-motion), filtres, lightbox `<dialog>`
-6. **Process** — 3 étapes (Consultation, Hand-painting, Gloss & finish)
-7. **Videos** — masquée tant que `vids` est vide
-8. **About** — portrait + bio + services
-9. **Contact** — CTA Instagram, localisations
-10. **Footer** — grand wordmark en contour
+1. **Header** — marque, liens, Instagram
+2. **Cover** — prénom + Clotilde détourée
+3. **Intro** — une phrase sur sa façon de travailler
+4. **Work** — collage de photos (`reals`), lightbox `<dialog>`
+5. **About** — portrait + bio
+6. **Contact** — « Take a seat » → Instagram, villes
+7. **Footer**
 
-### Données JS (arrays à maintenir)
-
+### Données JS
 ```js
 const reals = [ {id, cat, name, img, desc} ];   // cat: 'balayage' | 'colour' | 'cut' | 'bridal' | 'style'
-const vids  = [ {id, title, desc, src, thumb} ]; // src: 'videos/vid_01.mp4'
-const shades = [ {name, c:[root, mid, ends]} ];  // couleurs de la chevelure 3D
 ```
-Les filtres n'affichent que les catégories présentes dans `reals`.
 
 ---
 
@@ -89,7 +83,8 @@ Les filtres n'affichent que les catégories présentes dans `reals`.
 | `images/real_19.jpg` | Brunette longue, noir et blanc | style |
 | `images/real_20.jpg` | Carré long (lob) balayage | cut |
 | `images/real_21.jpg` | Blond doré racine ombrée | colour |
-| `images/salon.jpg` | Clotilde au travail dans le salon | hero |
+| `images/clotilde_cut.webp` | Clotilde détourée (fond transparent) | accueil |
+| `images/salon.jpg` | Photo salon d'origine (non utilisée actuellement) | — |
 | `images/clotilde_portrait.jpg` | Portrait de Clotilde | portrait (About) |
 
 Les originaux d'appareil photo (`IMG_*`, `*.HEIC`) sont ignorés par git : ils sont lourds et contiennent la position GPS. Toujours en faire une version web (max 1200 px, ~150 Ko, sans EXIF) avant de les utiliser.
@@ -109,7 +104,7 @@ Le dossier `videos/` est vide pour l'instant. Quand Clotilde fournit des vidéos
 
 ## Ce qu'il faut améliorer / ce qui est à faire
 
-1. **Ajouter des vidéos** quand Clotilde les fournit
+1. **Photo d'accueil en meilleure qualité** — idéalement Clotilde en train de couper, photographiée en haute résolution sur fond uni
 2. **Lien de réservation** — pour l'instant tout pointe vers Instagram ; remplacer si Planity/Calendly
 3. **Coordonnées réelles** — téléphone, email, adresse du salon (retirés du site tant qu'ils ne sont pas fournis)
 4. **Vérifier les textes** — noms/descriptions des réalisations et « twelve years » à valider par Clotilde

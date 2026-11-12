@@ -3,479 +3,250 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Atelier Clotilde — Master Colourist in Paris &amp; Thonon-les-Bains</title>
-<meta name="description" content="Atelier Clotilde: bespoke balayage, colour, precision cuts and bridal hair by master colourist Clotilde Bouttet in Paris and Thonon-les-Bains. See the work and book a consultation.">
-<meta name="theme-color" content="#0E0807">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E0807'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23C8908A'%3EC%3C/text%3E%3C/svg%3E">
+<title>Atelier Clotilde — Hair Colourist in Thonon-les-Bains &amp; Paris</title>
+<meta name="description" content="Atelier Clotilde: hand-painted balayage, colour and cuts by Clotilde Bouttet in Thonon-les-Bains and Paris. See her work and book on Instagram.">
+<meta name="theme-color" content="#EDE5DA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23EDE5DA'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' text-anchor='middle' fill='%232B231E'%3EC%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Atelier Clotilde">
-<meta property="og:title" content="Atelier Clotilde — Master Colourist">
-<meta property="og:description" content="Bespoke balayage, colour, cuts and bridal hair by Clotilde Bouttet in Paris and Thonon-les-Bains.">
+<meta property="og:title" content="Atelier Clotilde — Hair Colourist">
+<meta property="og:description" content="Hand-painted balayage, colour and cuts by Clotilde Bouttet in Thonon-les-Bains and Paris.">
 <meta property="og:image" content="images/real_16.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=DM+Sans:wght@300;400;500&display=swap">
-
-<script>
-/* Theme before paint: dark by default, light only if the visitor chose it */
-try{const t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}
-</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
+<link rel="preload" as="image" href="images/clotilde_cut.webp">
 
 <style>
 /* ─────────────────────────────────────────────
-   TOKENS — dark-first. Light theme = data-theme="light"
+   TOKENS — warm beige, light only (client's choice)
    ───────────────────────────────────────────── */
 :root {
-  --bg:    #0E0807;   /* espresso black */
-  --bg2:   #170E0C;   /* alternate sections */
-  --ink:   #F2E8E4;   /* main text */
-  --mid:   #C4A09A;   /* secondary text, nav */
-  --mute:  #8E6E66;   /* labels */
-  --blush: #C8908A;   /* accent */
-  --bl-lt: #3A2420;   /* hairlines */
-  --bl-p:  #1F1210;   /* image placeholders */
-  --stage: #0B0605;   /* 3D hero, always dark */
-  --nav-h: 72px;
-  --serif: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
-  --sans:  'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --gut:   max(24px, 4vw);
-  --ease:  cubic-bezier(.22,.61,.36,1);
-  color-scheme: dark;
-}
-:root[data-theme="light"] {
-  --bg:    #F9F5F1;
-  --bg2:   #EFE6DF;
-  --ink:   #120A08;
-  --mid:   #6A4F49;
-  --mute:  #8C6D62;
-  --blush: #A9655D;
-  --bl-lt: #DFC4BE;
-  --bl-p:  #F3EBE8;
+  --bg:     #EDE5DA;   /* sand */
+  --paper:  #F5F0E9;   /* lighter sand, image mats */
+  --ink:    #2B231E;   /* espresso text */
+  --mid:    #5F5046;   /* secondary text */
+  --mute:   #85746A;   /* guide line */
+  --accent: #9A6650;   /* terracotta-brown, the cut line */
+  --line:   #D6CABC;   /* hairlines */
+  --serif:  'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+  --sans:   'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gut:    max(20px, 4vw);
+  --ease:   cubic-bezier(.22,.61,.36,1);
   color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font-family: var(--sans); font-size: 16px; line-height: 1.6;
+  font-family: var(--sans); font-size: 16px; line-height: 1.65; font-weight: 300;
   overflow-x: clip; -webkit-font-smoothing: antialiased;
-  transition: background .5s var(--ease), color .5s var(--ease);
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-h1,h2,h3,p,figure { margin: 0; }
+h1,h2,h3,p,figure,dl,dd { margin: 0; }
 button { font: inherit; color: inherit; }
-::selection { background: var(--blush); color: var(--bg); }
-:focus-visible { outline: 1px solid var(--blush); outline-offset: 4px; }
-
-/* film grain — makes flat colour feel photographic */
-body::after {
-  content: ""; position: fixed; inset: -50%; z-index: 300; pointer-events: none;
-  opacity: .06; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
+::selection { background: var(--ink); color: var(--bg); }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
 .skip { position: absolute; left: -9999px; top: 8px; z-index: 400; background: var(--ink); color: var(--bg); padding: 10px 16px; font-size: 13px; }
 .skip:focus { left: 8px; }
 
-.eyebrow {
-  font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--mute); display: inline-flex; align-items: center; gap: 14px;
+/* paper grain */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 300; pointer-events: none; opacity: .32; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .48 0 0 0 0 .42 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .6; }
-.serif-i { font-family: var(--serif); font-style: italic; color: var(--blush); font-weight: 300; }
+
+.label { font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); }
+.it { font-family: var(--serif); font-style: italic; }
 
 /* ─────────────────────────────────────────────
-   NAV
+   HEADER
    ───────────────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding-top: env(safe-area-inset-top, 0px);
-  --n-ink: #F2E8E4; --n-mid: rgba(242,232,228,.7);
-  color: var(--n-ink);
-  transition: background .5s var(--ease), border-color .5s var(--ease), transform .5s var(--ease);
-  border-bottom: 1px solid transparent;
+header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  padding: calc(env(safe-area-inset-top, 0px) + 22px) var(--gut) 18px;
+  display: flex; align-items: baseline; gap: 28px;
+  transition: transform .6s var(--ease), background .4s var(--ease);
 }
-nav.scrolled {
-  --n-ink: var(--ink); --n-mid: var(--mid);
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  border-bottom-color: color-mix(in srgb, var(--bl-lt) 70%, transparent);
-}
-nav.away { transform: translateY(-100%); }
-.nav-in {
-  display: flex; align-items: center; gap: 32px; height: var(--nav-h);
-  padding-left: max(var(--gut), env(safe-area-inset-left, 0px));
-  padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
-}
-.logo {
-  font-family: var(--serif); font-size: 18px; letter-spacing: .2em; text-transform: uppercase;
-  margin-right: auto; white-space: nowrap;
-}
-.logo span { font-style: italic; text-transform: none; letter-spacing: .02em; color: var(--blush); }
-.nav-links { display: flex; gap: 36px; list-style: none; margin: 0; padding: 0; }
-.nav-links a, .nav-book {
-  font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--n-mid); transition: color .25s;
-}
-.nav-links a:hover, .nav-book:hover { color: var(--blush); }
-.nav-book { color: var(--n-ink); border: 1px solid currentColor; padding: 10px 18px; }
-.icon-btn {
-  background: none; border: 0; cursor: pointer; padding: 8px; color: var(--n-ink);
-  display: inline-flex; align-items: center; justify-content: center;
-}
-.icon-btn svg { width: 18px; height: 18px; }
-.burger { display: none; }
+header.away { transform: translateY(-110%); }
+header.solid { background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.brand { font-family: var(--serif); font-size: 17px; letter-spacing: .02em; margin-right: auto; }
+.brand i { color: var(--accent); }
+header nav { display: flex; gap: 26px; }
+header nav a, .ig { font-size: 13px; color: var(--mid); transition: color .3s; }
+header nav a:hover, .ig:hover { color: var(--ink); }
+.ig { color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
 
 /* ─────────────────────────────────────────────
-   HERO — 3D hair stage
+   THE CUT LINE (svg behind content) + 3D scissors (canvas above)
    ───────────────────────────────────────────── */
-.hero {
-  position: relative; min-height: 100vh; min-height: 100svh;
-  background: var(--stage); color: #F2E8E4; overflow: hidden; isolation: isolate;
-  display: grid; align-items: end;
-}
-#hair { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; }
-.hero::before { /* warm salon light behind the head */
-  content: ""; position: absolute; z-index: -2; inset: 0;
-  background:
-    radial-gradient(50% 60% at 68% 30%, rgba(200,144,138,.16), transparent 70%),
-    radial-gradient(40% 40% at 20% 90%, rgba(200,144,138,.06), transparent 70%);
-}
-.no-gl .hero::before {
-  background: linear-gradient(90deg, var(--stage) 30%, rgba(11,6,5,.35)), url("images/salon.jpg") right 60% / cover no-repeat;
-}
-.hero-in {
-  width: 100%;
-  padding: calc(var(--nav-h) + 40px) max(var(--gut), env(safe-area-inset-right, 0px)) clamp(40px, 7vh, 80px) max(var(--gut), env(safe-area-inset-left, 0px));
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end;
-}
-.hero .eyebrow { color: rgba(242,232,228,.6); margin-bottom: 28px; }
-.hero-h1 {
-  font-family: var(--serif); font-weight: 300; line-height: .9; letter-spacing: -.025em;
-  font-size: clamp(56px, 10.5vw, 176px); margin-bottom: 36px;
-}
-.hero-h1 .ln { display: block; overflow: hidden; padding-bottom: .06em; }
-.hero-h1 .ln > span { display: block; transform: translateY(105%); transition: transform 1.3s var(--ease); }
-.hero-h1 .ln:nth-child(2) > span { transition-delay: .12s; }
-.ready .hero-h1 .ln > span { transform: none; }
-.hero-h1 i { font-style: italic; color: #D9A49D; }
-.hero-lead { max-width: 380px; font-size: 15px; font-weight: 300; color: rgba(242,232,228,.72); line-height: 1.75; }
-.hero-cta { display: flex; gap: 28px; align-items: center; margin-top: 36px; flex-wrap: wrap; }
-
-.btn {
-  display: inline-flex; align-items: center; gap: 14px; cursor: pointer;
-  font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
-  padding: 18px 30px; border: 1px solid currentColor; background: none;
-  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
-}
-.btn svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
-.btn:hover svg { transform: translateX(4px); }
-.btn-fill { background: #F2E8E4; color: #120A08; border-color: #F2E8E4; }
-.btn-fill:hover { background: #D9A49D; border-color: #D9A49D; }
-.link-u {
-  font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
-  padding-bottom: 4px; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
-  transition: background-size .4s var(--ease), color .3s;
-}
-.link-u:hover { background-size: 30% 1px; color: var(--blush); }
-
-/* shade selector — recolours the 3D hair */
-.shades { justify-self: end; text-align: right; }
-.shades-l { font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(242,232,228,.5); margin-bottom: 14px; display: block; }
-.shades-row { display: flex; gap: 6px; justify-content: flex-end; flex-wrap: wrap; }
-.shade {
-  background: none; border: 1px solid rgba(242,232,228,.16); cursor: pointer;
-  padding: 8px 12px 8px 8px; display: inline-flex; align-items: center; gap: 10px;
-  font-size: 11px; letter-spacing: .08em; color: rgba(242,232,228,.7);
-  transition: border-color .3s, color .3s;
-}
-.shade i { width: 22px; height: 22px; border-radius: 50%; display: block; background: var(--sw); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
-.shade:hover { color: #F2E8E4; border-color: rgba(242,232,228,.45); }
-.shade[aria-pressed="true"] { color: #F2E8E4; border-color: #D9A49D; }
-
-.scroll-cue {
-  position: absolute; left: 50%; bottom: 22px; translate: -50% 0;
-  width: 1px; height: 46px; background: rgba(242,232,228,.15); overflow: hidden;
-}
-.scroll-cue::after {
-  content: ""; position: absolute; inset: 0; background: #D9A49D;
-  animation: cue 2.2s var(--ease) infinite; transform-origin: top;
-}
-@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+.page { position: relative; }
+#cutSvg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: visible; }
+#cutSvg .guide { fill: none; stroke: var(--mute); stroke-width: 1; stroke-dasharray: 5 7; opacity: .55; }
+#cutSvg .done  { fill: none; stroke: var(--accent); stroke-width: 1.2; }
+#scissors { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 40; }
+.sec { position: relative; z-index: 1; }
 
 /* ─────────────────────────────────────────────
-   MARQUEE
+   COVER
    ───────────────────────────────────────────── */
-.marquee {
-  border-block: 1px solid var(--bl-lt); overflow: hidden; padding: 26px 0;
-  font-family: var(--serif); font-weight: 300; font-size: clamp(26px, 3.6vw, 48px); white-space: nowrap;
+.cover {
+  position: relative; z-index: 1; height: 100vh; height: 100svh; min-height: 620px; overflow: hidden;
 }
-.marquee-t { display: inline-flex; animation: mq 38s linear infinite; }
-.marquee-t span { padding-right: .9em; }
-.marquee-t span:nth-child(even) { font-style: italic; color: var(--blush); }
-.marquee-t span::after { content: "·"; padding-left: .9em; color: var(--mute); font-style: normal; }
-@keyframes mq { to { transform: translateX(-50%); } }
-
-/* ─────────────────────────────────────────────
-   SECTIONS
-   ───────────────────────────────────────────── */
-.s { padding-block: clamp(96px, 14vw, 180px); }
-.s-alt { background: var(--bg2); }
-.wrap {
-  max-width: 1360px; margin: 0 auto;
-  padding-left: max(var(--gut), env(safe-area-inset-left, 0px));
-  padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
+.cover-name {
+  position: absolute; left: 0; right: 0; top: 50%; translate: 0 -46%;
+  text-align: center; white-space: nowrap; pointer-events: none;
+  font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .8;
+  font-size: clamp(110px, 24vw, 420px); color: var(--ink);
 }
-.h2 {
-  font-family: var(--serif); font-weight: 300; line-height: 1; letter-spacing: -.02em;
-  font-size: clamp(44px, 7vw, 104px);
+.cover-name span { display: inline-block; opacity: 0; transform: translateY(.18em); transition: opacity 1.4s var(--ease), transform 1.4s var(--ease); }
+.ready .cover-name span { opacity: 1; transform: none; }
+.cover-fig {
+  position: absolute; bottom: 0; left: 50%; z-index: 2;
+  height: min(84svh, 980px); aspect-ratio: 515 / 963; translate: -38% 0;
+  opacity: 0; transition: opacity 1.6s var(--ease) .3s;
+  will-change: transform;
 }
-.h2 i { font-style: italic; color: var(--blush); }
-
-/* Statement */
-.statement { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(40px, 7vw, 120px); align-items: center; }
-.st-text {
-  font-family: var(--serif); font-weight: 300; letter-spacing: -.015em; line-height: 1.12;
-  font-size: clamp(32px, 4.4vw, 66px); margin-top: 36px;
+.ready .cover-fig { opacity: 1; }
+.cover-fig img { width: 100%; height: 100%; object-fit: contain; object-position: bottom;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 21%); mask-image: linear-gradient(to right, transparent 0%, #000 21%); }
+.cover-meta {
+  position: absolute; z-index: 3; left: var(--gut); bottom: clamp(28px, 6vh, 56px);
+  max-width: 290px; font-size: 14px; color: var(--mid);
 }
-.st-text i { color: var(--blush); }
-.st-text .w { opacity: .16; transition: opacity .5s var(--ease); }
-.st-text .w.on { opacity: 1; }
-.st-sig { margin-top: 44px; display: flex; gap: 18px; align-items: center; font-size: 13px; color: var(--mid); }
-.st-sig b { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 26px; color: var(--ink); }
-.st-photo { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--bl-p); }
-.st-photo img { width: 100%; height: 118%; object-fit: cover; object-position: center 70%; will-change: transform; }
-.st-photo figcaption {
-  position: absolute; left: 16px; bottom: 14px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
-  color: #F2E8E4; text-shadow: 0 1px 12px rgba(0,0,0,.6);
+.cover-meta b { display: block; font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.25; color: var(--ink); margin-bottom: 10px; }
+.cover-side {
+  position: absolute; z-index: 3; right: var(--gut); bottom: clamp(28px, 6vh, 56px);
+  text-align: right; font-size: 13px; color: var(--mid); line-height: 1.7;
 }
 
 /* ─────────────────────────────────────────────
-   WORK — horizontal pinned gallery (desktop)
+   INTRO
    ───────────────────────────────────────────── */
-.work { padding-top: clamp(96px, 14vw, 180px); }
-.work-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: clamp(40px, 6vw, 72px); }
-.work-head p { max-width: 340px; color: var(--mid); font-size: 14px; font-weight: 300; margin-top: 22px; }
-.filters { display: flex; gap: 22px; flex-wrap: wrap; }
-.f {
-  background: none; border: 0; padding: 4px 0; cursor: pointer;
-  font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--mute);
-  border-bottom: 1px solid transparent; transition: color .25s, border-color .25s;
+.intro { padding: clamp(110px, 18vh, 200px) var(--gut) clamp(80px, 12vh, 140px); display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 20px; }
+.intro .label { grid-column: 1 / 4; padding-top: 14px; }
+.intro p {
+  grid-column: 4 / 12; font-family: var(--serif); font-weight: 400; letter-spacing: -.012em;
+  font-size: clamp(28px, 3.6vw, 54px); line-height: 1.16;
 }
-.f sup { font-size: 9px; margin-left: 3px; letter-spacing: 0; }
-.f:hover { color: var(--ink); }
-.f[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--blush); }
-
-.hs { position: relative; }
-.hs-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
-.track {
-  display: flex; align-items: flex-start; gap: clamp(28px, 4vw, 64px);
-  padding-left: max(var(--gut), env(safe-area-inset-left, 0px));
-  padding-right: 18vw; will-change: transform; width: max-content;
-}
-.w-item { flex: none; }
-.w-item:nth-child(3n+2) { margin-top: 12vh; }
-.w-item:nth-child(3n) { margin-top: 4vh; }
-.w-btn {
-  display: block; padding: 0; border: 0; background: var(--bl-p); cursor: zoom-in;
-  height: 62vh; aspect-ratio: 3/4; overflow: hidden; position: relative;
-}
-.w-item:nth-child(3n+2) .w-btn { height: 50vh; }
-.w-item:nth-child(3n) .w-btn { height: 56vh; }
-.w-btn img {
-  width: 100%; height: 100%; object-fit: cover;
-  transform: scale(1.08); transition: transform 1.2s var(--ease), filter .8s var(--ease);
-  filter: saturate(.92);
-}
-.w-btn:hover img, .w-btn:focus-visible img { transform: scale(1); filter: saturate(1.05); }
-.w-btn::after { /* sweep of light on hover, like a strand catching the light */
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(105deg, transparent 40%, rgba(255,240,225,.18) 50%, transparent 60%);
-  transform: translateX(-110%); transition: transform 1.1s var(--ease);
-}
-.w-btn:hover::after { transform: translateX(110%); }
-.w-cap { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; padding-top: 16px; align-items: baseline; }
-.w-no { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--blush); grid-row: span 2; }
-.w-name { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 1.2; }
-.w-cat { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); }
-.hs-foot {
-  display: flex; align-items: center; gap: 24px; margin-top: 5vh;
-  padding-inline: max(var(--gut), env(safe-area-inset-left, 0px)) max(var(--gut), env(safe-area-inset-right, 0px));
-  font-size: 11px; letter-spacing: .18em; color: var(--mute); font-variant-numeric: tabular-nums;
-}
-.hs-bar { flex: 1; height: 1px; background: var(--bl-lt); position: relative; overflow: hidden; }
-.hs-bar span { position: absolute; inset: 0; background: var(--blush); transform-origin: left; transform: scaleX(0); }
-
-/* Vertical fallback (mobile, reduced motion) */
-.hs.flat .hs-sticky { position: static; height: auto; display: block; overflow: visible; }
-.hs.flat .track {
-  width: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 16px;
-  padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); transform: none !important;
-}
-.hs.flat .w-item { margin-top: 0; }
-.hs.flat .w-item:nth-child(even) { margin-top: 56px; }
-.hs.flat .w-btn { height: auto; width: 100%; }
-.hs.flat .hs-foot { display: none; }
+.intro p em { font-style: italic; color: var(--accent); }
 
 /* ─────────────────────────────────────────────
-   PROCESS
+   WORK — a loose, hand-laid collage
    ───────────────────────────────────────────── */
-.proc-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: clamp(56px, 8vw, 110px); }
-.proc-head p { color: var(--mid); font-weight: 300; max-width: 420px; justify-self: end; }
-.proc { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--bl-lt); }
-.step { padding: 40px clamp(20px, 3vw, 44px) 8px 0; position: relative; }
-.step + .step { padding-left: clamp(20px, 3vw, 44px); border-left: 1px solid var(--bl-lt); }
-.step-n { font-family: var(--serif); font-weight: 300; font-size: clamp(64px, 7vw, 112px); line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--blush); display: block; margin-bottom: 28px; }
-.step h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin-bottom: 12px; }
-.step p { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.8; max-width: 340px; }
+.work { padding: 0 var(--gut) clamp(60px, 10vh, 120px); }
+.work-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-bottom: clamp(40px, 8vh, 90px); }
+.work-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 92px); letter-spacing: -.02em; line-height: 1; }
+.work-head h2 i { color: var(--accent); }
+.collage { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; row-gap: clamp(60px, 11vh, 140px); }
+.piece { margin: 0; }
+.piece:nth-child(4n+1) { grid-column: 1 / 6; }
+.piece:nth-child(4n+2) { grid-column: 8 / 13; margin-top: 22vh; }
+.piece:nth-child(4n+3) { grid-column: 2 / 7; }
+.piece:nth-child(4n+4) { grid-column: 8 / 12; margin-top: 12vh; }
+.piece-btn { display: block; width: 100%; padding: 0; border: 0; background: var(--paper); cursor: zoom-in; overflow: hidden; aspect-ratio: 3 / 4; }
+.piece-btn img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+.piece-btn:hover img, .piece-btn:focus-visible img { transform: scale(1.035); }
+.piece figcaption { display: flex; gap: 14px; align-items: baseline; padding-top: 14px; }
+.piece .n { font-family: var(--serif); font-style: italic; color: var(--accent); font-size: 15px; }
+.piece .t { font-family: var(--serif); font-size: 20px; }
+.piece .c { margin-left: auto; font-size: 12px; color: var(--mid); }
+.reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.4s var(--ease); }
+.reveal.on { clip-path: inset(0 0 0 0); }
 
 /* ─────────────────────────────────────────────
    ABOUT
    ───────────────────────────────────────────── */
-.about { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(40px, 8vw, 140px); align-items: center; }
-.about-ph { position: relative; }
-.about-ph .frame { aspect-ratio: 4/5; overflow: hidden; background: var(--bl-p); }
-.about-ph img { width: 100%; height: 100%; object-fit: cover; }
-.about-ph .tag {
-  position: absolute; right: -18px; bottom: 40px; writing-mode: vertical-rl;
-  font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--mute);
-}
-.about-tx .h2 { margin: 28px 0 36px; }
-.about-tx > p { color: var(--mid); font-weight: 300; font-size: 15px; line-height: 1.9; max-width: 520px; }
-.svc { list-style: none; padding: 0; margin: 48px 0 0; border-top: 1px solid var(--bl-lt); }
-.svc li { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--bl-lt); align-items: baseline; }
-.svc b { font-family: var(--serif); font-weight: 300; font-size: clamp(22px, 2.2vw, 30px); transition: color .3s, transform .5s var(--ease); display: inline-block; }
-.svc li:hover b { color: var(--blush); transform: translateX(8px); }
-.svc span { font-size: 12px; color: var(--mute); text-align: right; }
+.about { padding: clamp(120px, 18vh, 220px) var(--gut); display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 20px; align-items: end; }
+.about-img { grid-column: 1 / 6; aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper); }
+.about-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.about-tx { grid-column: 7 / 12; }
+.about-tx h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: -.02em; margin: 18px 0 32px; }
+.about-tx h2 i { color: var(--accent); }
+.about-tx p { color: var(--mid); font-size: 16px; max-width: 470px; }
+.about-tx p + p { margin-top: 18px; }
+.about-tx .does { font-family: var(--serif); font-size: clamp(20px, 1.8vw, 26px); color: var(--ink); line-height: 1.45; }
 
 /* ─────────────────────────────────────────────
-   VIDEOS (shown when vids[] has entries)
+   CONTACT
    ───────────────────────────────────────────── */
-.vgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
-.vc-thumb { aspect-ratio: 16/9; position: relative; overflow: hidden; background: var(--bl-p); display: grid; place-items: center; }
-.vc-thumb img, .vc-thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.play { position: relative; z-index: 2; width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(242,232,228,.7); background: rgba(14,8,7,.35); color: #F2E8E4; cursor: pointer; display: grid; place-items: center; backdrop-filter: blur(6px); }
-.vc-name { font-family: var(--serif); font-weight: 300; font-size: 22px; margin-top: 16px; }
-.vc-desc { font-size: 13px; color: var(--mid); font-weight: 300; }
+.contact { padding: clamp(80px, 12vh, 140px) var(--gut) clamp(60px, 10vh, 100px); text-align: center; }
+.contact .label { display: block; margin-bottom: 26px; }
+.book {
+  display: inline-block; font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .9;
+  font-size: clamp(76px, 15vw, 250px); position: relative;
+}
+.book i { color: var(--accent); }
+.book::after {
+  content: ""; position: absolute; left: 4%; right: 4%; bottom: -.02em; height: 1px; background: var(--ink);
+  transform: scaleX(0); transform-origin: left; transition: transform .9s var(--ease);
+}
+.book:hover::after, .book:focus-visible::after { transform: scaleX(1); }
+.contact-sub { color: var(--mid); max-width: 440px; margin: 30px auto 0; }
+.contact-dl { display: flex; justify-content: center; gap: clamp(32px, 7vw, 110px); flex-wrap: wrap; margin-top: clamp(56px, 9vh, 100px); }
+.contact-dl dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
+.contact-dl dd { font-family: var(--serif); font-size: 20px; }
+.contact-dl a { border-bottom: 1px solid var(--line); transition: border-color .3s; }
+.contact-dl a:hover { border-color: var(--accent); }
 
-/* ─────────────────────────────────────────────
-   CONTACT + FOOTER
-   ───────────────────────────────────────────── */
-.contact { text-align: center; }
-.contact .eyebrow { justify-content: center; }
-.c-big {
-  font-family: var(--serif); font-weight: 300; letter-spacing: -.03em; line-height: .92;
-  font-size: clamp(56px, 12vw, 200px); margin: 32px 0 40px;
-}
-.c-big i { color: var(--blush); }
-.c-sub { color: var(--mid); font-weight: 300; max-width: 460px; margin: 0 auto 48px; }
-.c-cta { display: inline-flex; color: var(--ink); }
-.c-cta:hover { background: var(--ink); color: var(--bg); }
-.c-meta { display: flex; justify-content: center; gap: clamp(32px, 6vw, 96px); flex-wrap: wrap; margin-top: clamp(64px, 9vw, 120px); padding-top: 40px; border-top: 1px solid var(--bl-lt); }
-.c-meta div { text-align: left; }
-.c-meta dt { font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px; }
-.c-meta dd { margin: 0; font-family: var(--serif); font-size: 20px; font-weight: 300; }
-.c-meta a:hover { color: var(--blush); }
-
-footer { padding: 0 0 28px; overflow: hidden; }
-.foot-word {
-  font-family: var(--serif); font-weight: 300; text-transform: uppercase; letter-spacing: -.01em;
-  font-size: 8.4vw; line-height: .9; white-space: nowrap; text-align: center;
-  color: transparent; -webkit-text-stroke: 1px var(--bl-lt); user-select: none; margin: 40px 0 28px;
-}
-.foot {
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  font-size: 11px; color: var(--mute); letter-spacing: .08em;
-}
-.foot a:hover { color: var(--blush); }
+footer { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px var(--gut) calc(22px + env(safe-area-inset-bottom, 0px)); font-size: 12px; color: var(--mid); border-top: 1px solid var(--line); }
 
 /* ─────────────────────────────────────────────
    LIGHTBOX
    ───────────────────────────────────────────── */
-dialog.lb {
-  border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none;
-  background: rgba(8,4,3,.97); color: #F2E8E4;
-}
-dialog.lb[open] { display: grid; grid-template-columns: 1fr minmax(260px, 360px); animation: lbIn .5s var(--ease); }
+dialog.lb { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; background: var(--bg); color: var(--ink); }
+dialog.lb[open] { display: grid; grid-template-columns: 1fr minmax(260px, 360px); animation: lbIn .45s var(--ease); }
 dialog.lb::backdrop { background: transparent; }
 @keyframes lbIn { from { opacity: 0; } }
-.lb-img { display: grid; place-items: center; padding: max(24px, 4vh) 24px; min-height: 0; }
-.lb-img img { max-height: 92vh; max-height: 92dvh; max-width: 100%; object-fit: contain; animation: lbImg .7s var(--ease); }
-@keyframes lbImg { from { opacity: 0; transform: scale(.97); } }
-.lb-side { padding: 80px 40px 40px; display: flex; flex-direction: column; gap: 18px; border-left: 1px solid rgba(242,232,228,.1); }
-.lb-no { font-family: var(--serif); font-style: italic; color: #D9A49D; font-size: 16px; }
-.lb-cat { font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(242,232,228,.55); }
-.lb-name { font-family: var(--serif); font-weight: 300; font-size: 40px; line-height: 1.05; }
-.lb-desc { font-size: 14px; font-weight: 300; color: rgba(242,232,228,.72); line-height: 1.85; }
+.lb-img { display: grid; place-items: center; padding: max(28px, 5vh) 28px; min-height: 0; }
+.lb-img img { max-height: 90vh; max-height: 90dvh; max-width: 100%; object-fit: contain; }
+.lb-side { padding: 90px 40px 40px; display: flex; flex-direction: column; gap: 14px; border-left: 1px solid var(--line); }
+.lb-n { font-family: var(--serif); font-style: italic; color: var(--accent); }
+.lb-name { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.05; }
+.lb-desc { color: var(--mid); font-size: 15px; }
 .lb-nav { margin-top: auto; display: flex; gap: 8px; }
-.lb-nav button, .lb-x {
-  width: 48px; height: 48px; border: 1px solid rgba(242,232,228,.25); background: none; cursor: pointer;
-  display: grid; place-items: center; color: #F2E8E4; transition: background .3s, border-color .3s;
-}
-.lb-nav button:hover, .lb-x:hover { background: rgba(242,232,228,.08); border-color: #D9A49D; }
+.lb-nav button, .lb-x { width: 46px; height: 46px; border: 1px solid var(--line); background: none; cursor: pointer; display: grid; place-items: center; transition: border-color .3s; }
+.lb-nav button:hover, .lb-x:hover { border-color: var(--ink); }
 .lb-x { position: absolute; top: max(16px, env(safe-area-inset-top, 0px)); right: 16px; }
 .lb svg { width: 16px; height: 16px; }
 
 /* ─────────────────────────────────────────────
-   REVEAL
-   ───────────────────────────────────────────── */
-.rv { opacity: 0; transform: translateY(40px); transition: opacity 1.1s var(--ease), transform 1.1s var(--ease); }
-.rv.on { opacity: 1; transform: none; }
-.rv-d1 { transition-delay: .12s; } .rv-d2 { transition-delay: .24s; }
-
-/* ─────────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────────── */
-@media (max-width: 1000px) {
-  .hero-in { grid-template-columns: 1fr; }
-  .shades { justify-self: start; text-align: left; }
-  .shades-row { justify-content: flex-start; }
-  .statement, .about, .proc-head { grid-template-columns: 1fr; }
-  .proc-head p { justify-self: start; }
-  .st-photo { max-width: 520px; }
-}
-@media (max-width: 860px) {
-  .nav-links { display: none; }
-  .burger { display: inline-flex; }
-  .nav-in { gap: 8px; }
-  .nav-book { display: none; }
-  .nav-links.open {
-    display: flex; flex-direction: column; gap: 4px;
-    position: fixed; inset: calc(var(--nav-h) + env(safe-area-inset-top, 0px)) 0 auto 0;
-    background: var(--bg); padding: 24px var(--gut) 36px; border-bottom: 1px solid var(--bl-lt);
-  }
-  .nav-links.open a { font-family: var(--serif); font-size: 34px; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 300; display: block; padding: 6px 0; }
-  .proc { grid-template-columns: 1fr; }
-  .step + .step { padding-left: 0; border-left: 0; border-top: 1px solid var(--bl-lt); }
-  .step { padding-bottom: 32px; }
+@media (max-width: 900px) {
+  header nav { display: none; }
+  .cover { height: auto; min-height: 0; display: flex; flex-direction: column; padding-top: calc(env(safe-area-inset-top, 0px) + 104px); }
+  .cover-name { position: relative; top: auto; translate: none; font-size: 26vw; }
+  .cover-fig { position: relative; left: auto; translate: none; align-self: center; height: 62svh; margin-top: -9vw; }
+  .cover-meta { position: static; max-width: none; padding: 26px var(--gut) 34px; font-size: 14px; border-top: 1px solid var(--line); }
+  .cover-meta b { font-size: 20px; }
+  .cover-side { display: none; }
+  .intro .label, .intro p { grid-column: 1 / -1; }
+  .intro .label { margin-bottom: 18px; }
+  .collage { grid-template-columns: repeat(6, 1fr); row-gap: 64px; }
+  .piece:nth-child(odd)  { grid-column: 1 / 6 !important; margin-top: 0 !important; }
+  .piece:nth-child(even) { grid-column: 2 / 7 !important; margin-top: 0 !important; }
+  .about-img, .about-tx { grid-column: 1 / -1; }
+  .about-tx { margin-top: 40px; }
   dialog.lb[open] { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
-  .lb-side { border-left: 0; border-top: 1px solid rgba(242,232,228,.1); padding: 20px 24px max(24px, env(safe-area-inset-bottom, 0px)); gap: 8px; }
+  .lb-img img { max-height: 60dvh; }
+  .lb-side { border-left: 0; border-top: 1px solid var(--line); padding: 20px 24px max(24px, env(safe-area-inset-bottom, 0px)); gap: 6px; }
   .lb-name { font-size: 26px; }
-  .lb-img img { max-height: 58dvh; }
-  .scroll-cue { display: none; }
-  .lb-desc { font-size: 13px; }
-  .lb-nav { margin-top: 8px; }
-  .about-ph .tag { display: none; }
 }
-@media (max-width: 560px) {
-  .hs.flat .track { grid-template-columns: 1fr; }
-  .hs.flat .w-item:nth-child(even) { margin-top: 0; }
-  .hero-lead { font-size: 14px; }
-  .shade span { display: none; }
-  .shade { padding: 6px; }
-  .svc li { grid-template-columns: 1fr; gap: 4px; }
-  .svc span { text-align: left; }
+@media (max-width: 520px) {
+  .piece .c { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition-duration: .01s !important; }
-  .rv, .hero-h1 .ln > span { opacity: 1; transform: none; }
-  .st-text .w { opacity: 1; }
+  *, *::before, *::after { transition-duration: .01s !important; animation: none !important; }
+  .reveal { clip-path: none; }
 }
 </style>
 
@@ -483,216 +254,109 @@ dialog.lb::backdrop { background: transparent; }
   "@context":"https://schema.org",
   "@type":"HairSalon",
   "name":"Atelier Clotilde",
-  "description":"Bespoke balayage, colour, precision cuts and bridal hair by master colourist Clotilde Bouttet.",
+  "description":"Hand-painted balayage, colour and cuts by hair colourist Clotilde Bouttet.",
   "image":"images/real_16.jpg",
-  "areaServed":[{"@type":"City","name":"Paris"},{"@type":"City","name":"Thonon-les-Bains"}],
+  "areaServed":[{"@type":"City","name":"Thonon-les-Bains"},{"@type":"City","name":"Paris"}],
   "sameAs":["https://www.instagram.com/clotilde.frenchhair/"],
-  "founder":{"@type":"Person","name":"Clotilde Bouttet","jobTitle":"Master Colourist","sameAs":["https://www.instagram.com/clotilde.frenchhair/"]}
+  "founder":{"@type":"Person","name":"Clotilde Bouttet","jobTitle":"Hair Colourist","sameAs":["https://www.instagram.com/clotilde.frenchhair/"]}
 }</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav id="nav" aria-label="Main">
-  <div class="nav-in">
-    <a href="#home" class="logo" aria-label="Atelier Clotilde — home">Atelier <span>Clotilde</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li data-vid><a href="#videos">Videos</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="https://www.instagram.com/clotilde.frenchhair/" class="nav-book" target="_blank" rel="noopener">Book</a>
-    <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light theme">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg>
-    </button>
-    <button class="icon-btn burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M3 8h18M3 16h18"/></svg>
-    </button>
-  </div>
-</nav>
+<header id="hdr">
+  <a href="#top" class="brand">Atelier <i>Clotilde</i></a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#book">Appointments</a>
+  </nav>
+  <a class="ig" href="https://www.instagram.com/clotilde.frenchhair/" target="_blank" rel="noopener">Instagram ↗</a>
+</header>
 
-<main id="main">
+<canvas id="scissors" aria-hidden="true"></canvas>
 
-<!-- HERO -->
-<section id="home" class="hero" aria-labelledby="heroTitle">
-  <canvas id="hair" aria-hidden="true"></canvas>
-  <div class="hero-in">
-    <div>
-      <span class="eyebrow">Master Colourist — Paris · Thonon-les-Bains</span>
-      <h1 class="hero-h1" id="heroTitle">
-        <span class="ln"><span>Colour,</span></span>
-        <span class="ln"><span><i>by hand.</i></span></span>
-      </h1>
-      <p class="hero-lead">Balayage, bronde and lived-in blondes, painted strand by strand by Clotilde Bouttet — so the colour grows out as beautifully as it walks out of the salon.</p>
-      <div class="hero-cta">
-        <a href="#work" class="btn btn-fill">See the work
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
-        </a>
-        <a href="https://www.instagram.com/clotilde.frenchhair/" class="link-u" target="_blank" rel="noopener">Book on Instagram</a>
+<div class="page" id="page">
+  <svg id="cutSvg" aria-hidden="true"><path class="guide" id="guide"/><path class="done" id="done"/></svg>
+
+  <main id="main">
+
+    <!-- COVER -->
+    <section class="cover" id="top" aria-labelledby="coverName">
+      <h1 class="cover-name" id="coverName"><span>Clotilde</span></h1>
+      <figure class="cover-fig" id="coverFig">
+        <img src="images/clotilde_cut.webp" alt="Clotilde Bouttet at work in her salon, blow-drying a client's hair" width="515" height="963" fetchpriority="high">
+      </figure>
+      <p class="cover-meta"><b>Hair colourist, working by hand.</b>Balayage, colour and cuts — Thonon-les-Bains &amp; Paris.</p>
+      <p class="cover-side">Atelier Clotilde<br><span class="it">by appointment</span></p>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro sec" aria-label="Introduction" data-cut="0.965@0.3 0.965@0.95">
+      <span class="label">The atelier</span>
+      <p>Clotilde paints colour freehand, strand by strand, following the way your hair falls — so it looks <em>effortless</em> the day you leave, and still beautiful the day it grows out.</p>
+    </section>
+
+    <!-- WORK -->
+    <section class="work sec" id="work" aria-labelledby="workTitle">
+      <div class="work-head" data-cut="0.56@0.5">
+        <h2 id="workTitle">Recent <i>work</i></h2>
+        <span class="label" id="workCount"></span>
       </div>
-    </div>
-    <div class="shades" role="group" aria-labelledby="shadesL">
-      <span class="shades-l" id="shadesL">Try a shade</span>
-      <div class="shades-row" id="shades"></div>
-    </div>
-  </div>
-  <span class="scroll-cue" aria-hidden="true"></span>
-</section>
+      <div class="collage" id="collage"></div>
+    </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-t">
-    <span>Balayage</span><span>Bronde</span><span>Copper</span><span>Colour correction</span><span>Gloss</span><span>Precision cuts</span><span>Honey blonde</span><span>Bridal</span>
-    <span>Balayage</span><span>Bronde</span><span>Copper</span><span>Colour correction</span><span>Gloss</span><span>Precision cuts</span><span>Honey blonde</span><span>Bridal</span>
-  </div>
-</div>
-
-<!-- STATEMENT -->
-<section class="s" aria-labelledby="stL">
-  <div class="wrap statement">
-    <div>
-      <span class="eyebrow" id="stL">The atelier</span>
-      <p class="st-text" id="stText">Colour is never simply applied. It is <i>placed</i> — strand by strand, exactly where the light will fall.</p>
-      <div class="st-sig"><b>Clotilde</b> Founder &amp; colourist</div>
-    </div>
-    <figure class="st-photo rv">
-      <img id="stImg" src="images/salon.jpg" alt="Clotilde blow-drying a client in her salon" loading="lazy" width="1200" height="1600">
-      <figcaption>In the salon</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- WORK -->
-<section id="work" class="work s-alt" aria-labelledby="workTitle">
-  <div class="wrap work-head">
-    <div>
-      <span class="eyebrow">Selected work</span>
-      <h2 class="h2" id="workTitle" style="margin-top:24px">The <i>portfolio.</i></h2>
-      <p>Real clients, real light, no filters. Scroll through — select any look to see it up close.</p>
-    </div>
-    <div class="filters" id="filters" role="group" aria-label="Filter by technique"></div>
-  </div>
-  <div class="hs" id="hs">
-    <div class="hs-sticky">
-      <div class="track" id="track"></div>
-      <div class="hs-foot" aria-hidden="true">
-        <span id="hsNow">01</span>
-        <div class="hs-bar"><span id="hsBar"></span></div>
-        <span id="hsTot">11</span>
+    <!-- ABOUT -->
+    <section class="about sec" id="about" aria-labelledby="aboutTitle" data-cut="0.466@0.03 0.466@0.97">
+      <div class="about-img reveal"><img src="images/clotilde_portrait.jpg" alt="Portrait of Clotilde Bouttet" loading="lazy" width="900" height="900"></div>
+      <div class="about-tx">
+        <span class="label">About</span>
+        <h2 id="aboutTitle">Clotilde <i>Bouttet</i></h2>
+        <p class="does">Balayage and bronde, copper and brunette, honey and bright blondes. Precision cuts, and bridal hair on request.</p>
+        <p>Trained in Paris, Clotilde has spent twelve years learning to read hair: its texture, its natural tone, the way it moves. Every appointment starts with a conversation and ends with a colour written for one person.</p>
       </div>
-    </div>
-  </div>
-  <div style="height:clamp(64px,8vw,120px)"></div>
-</section>
+    </section>
 
-<!-- PROCESS -->
-<section id="process" class="s" aria-labelledby="procTitle">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow">The process</span>
-        <h2 class="h2" id="procTitle" style="margin-top:24px">Three hours,<br><i>one signature.</i></h2>
-      </div>
-      <p class="rv">Every appointment follows the same quiet ritual. Nothing is rushed, nothing is generic — the formula is written for your hair, on the day.</p>
-    </div>
-    <div class="proc">
-      <article class="step rv">
-        <span class="step-n" aria-hidden="true">I</span>
-        <h3>Consultation</h3>
-        <p>We look at your hair in natural light, talk about how you wear it day to day, and decide together how far to go.</p>
-      </article>
-      <article class="step rv rv-d1">
-        <span class="step-n" aria-hidden="true">II</span>
-        <h3>Hand-painting</h3>
-        <p>Lightener is painted freehand, section by section, following the way your hair falls — never a foil-by-numbers pattern.</p>
-      </article>
-      <article class="step rv rv-d2">
-        <span class="step-n" aria-hidden="true">III</span>
-        <h3>Gloss &amp; finish</h3>
-        <p>A custom gloss sets the tone, then a cut or blow-dry gives the colour its movement. You leave with a shade made for you.</p>
-      </article>
-    </div>
-  </div>
-</section>
+    <!-- CONTACT -->
+    <section class="contact sec" id="book" aria-labelledby="bookTitle" data-cut="0.5@0">
+      <span class="label" id="bookTitle">Appointments</span>
+      <a class="book" href="https://www.instagram.com/clotilde.frenchhair/" target="_blank" rel="noopener">Take <i>a seat</i></a>
+      <p class="contact-sub">Clotilde takes every booking herself. Send her a message on Instagram with a photo of your hair as it is today.</p>
+      <dl class="contact-dl">
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/clotilde.frenchhair/" target="_blank" rel="noopener">@clotilde.frenchhair</a></dd></div>
+        <div><dt>Where</dt><dd>Thonon-les-Bains · Paris</dd></div>
+      </dl>
+    </section>
 
-<!-- VIDEOS -->
-<section id="videos" class="s s-alt" data-vid aria-labelledby="vidTitle">
-  <div class="wrap">
-    <span class="eyebrow">Watch</span>
-    <h2 class="h2" id="vidTitle" style="margin-top:24px">In the <i>chair.</i></h2>
-    <div class="vgrid" id="vgrid"></div>
-  </div>
-</section>
+  </main>
 
-<!-- ABOUT -->
-<section id="about" class="s s-alt" aria-labelledby="aboutTitle">
-  <div class="wrap about">
-    <div class="about-ph rv">
-      <div class="frame"><img src="images/clotilde_portrait.jpg" alt="Portrait of Clotilde Bouttet" loading="lazy" width="900" height="900"></div>
-      <span class="tag" aria-hidden="true">Clotilde Bouttet</span>
-    </div>
-    <div class="about-tx">
-      <span class="eyebrow">About</span>
-      <h2 class="h2" id="aboutTitle">Meet <i>Clotilde.</i></h2>
-      <p>Clotilde is a master colourist trained in Paris. Over twelve years she has built her reputation on precision, patience and a rare ability to understand what each client truly wants — then deliver it, often better than they imagined.</p>
-      <ul class="svc">
-        <li><b>Balayage &amp; bronde</b><span>Hand-painted, lived-in</span></li>
-        <li><b>Colour &amp; correction</b><span>Copper, brunette, blonde</span></li>
-        <li><b>Precision cuts</b><span>Lobs, bobs, long layers</span></li>
-        <li><b>Bridal</b><span>Trial &amp; wedding day</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="s contact" aria-labelledby="cTitle">
-  <div class="wrap">
-    <span class="eyebrow">Appointments</span>
-    <h2 class="c-big" id="cTitle">Your next<br><i>colour.</i></h2>
-    <p class="c-sub">Clotilde handles every booking personally. Send a message with a photo of your hair today and the look you are dreaming of.</p>
-    <a href="https://www.instagram.com/clotilde.frenchhair/" class="btn c-cta" target="_blank" rel="noopener">Message on Instagram
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
-    </a>
-    <dl class="c-meta">
-      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/clotilde.frenchhair/" target="_blank" rel="noopener">@clotilde.frenchhair</a></dd></div>
-      <div><dt>Locations</dt><dd>Paris · Thonon-les-Bains</dd></div>
-    </dl>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="foot-word" aria-hidden="true">Atelier Clotilde</div>
-  <div class="wrap foot">
+  <footer>
     <span>© 2026 Atelier Clotilde</span>
-    <a href="#home">Back to top ↑</a>
-  </div>
-</footer>
+    <a href="#top">Back to the top</a>
+  </footer>
+</div>
 
 <!-- LIGHTBOX -->
 <dialog class="lb" id="lb" aria-labelledby="lbName">
   <div class="lb-img" id="lbImg"></div>
   <div class="lb-side">
-    <span class="lb-no" id="lbNo"></span>
-    <span class="lb-cat" id="lbCat"></span>
+    <span class="lb-n" id="lbN"></span>
+    <span class="label" id="lbCat"></span>
     <h3 class="lb-name" id="lbName"></h3>
     <p class="lb-desc" id="lbDesc"></p>
     <div class="lb-nav">
-      <button type="button" id="lbPrev" aria-label="Previous look"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M15 8H2M7 3 2 8l5 5"/></svg></button>
-      <button type="button" id="lbNext" aria-label="Next look"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 8h13M9 3l5 5-5 5"/></svg></button>
+      <button type="button" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 8H2M7 3 2 8l5 5"/></svg></button>
+      <button type="button" id="lbNext" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 8h13M9 3l5 5-5 5"/></svg></button>
     </div>
   </div>
-  <button type="button" class="lb-x" id="lbX" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 2l12 12M14 2 2 14"/></svg></button>
+  <button type="button" class="lb-x" id="lbX" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 2l12 12M14 2 2 14"/></svg></button>
 </dialog>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 /* ═════════════════════════════════════════════
-   DATA — edit these arrays to update the site
+   DATA — edit to update the site
    ═════════════════════════════════════════════ */
 const reals = [
   {id:11,cat:'balayage',name:'Soft Bronde',     img:'images/real_11.jpg',desc:'Hand-painted bronde with face-framing brightness. Lived-in colour designed to grow out softly, with no harsh line at the root.'},
@@ -707,388 +371,254 @@ const reals = [
   {id:14,cat:'balayage',name:'Honey Balayage',  img:'images/real_14.jpg',desc:'Mid-length hair brightened with honey-toned balayage. Gentle contrast for a sun-kissed, natural result.'},
   {id:19,cat:'style',   name:'Dark Length',     img:'images/real_19.jpg',desc:'Long, deep brunette hair styled in soft, voluminous waves. Pure shine, pure movement.'},
 ];
-const vids = [
-  // Add entries when Clotilde provides videos, e.g.:
-  // {id:1,title:'Balayage Application',desc:'Step-by-step painting — from sectioning to toning reveal.',src:'videos/vid_01.mp4',thumb:'images/thumb_01.jpg'},
-];
-/* Shades for the 3D hair: root → mid-lengths → painted ends */
-const shades = [
-  {name:'Bronde',   c:['#24160F','#5E3F2A','#C7A07A']},
-  {name:'Honey',    c:['#2A190D','#7A4E26','#E2B26A']},
-  {name:'Copper',   c:['#22100A','#6E2F16','#D9783F']},
-  {name:'Blonde',   c:['#4A3A2D','#A88F70','#F2E4CC']},
-  {name:'Espresso', c:['#0E0806','#2A1810','#6E4632']},
-];
 const CATS = {balayage:'Balayage', colour:'Colour', cut:'Cut', style:'Styling', bridal:'Bridal'};
 
 /* ═════════════════════════════════════════════ */
 const $ = (s, r=document) => r.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const pad = n => String(n).padStart(2,'0');
+const pad = n => String(n).padStart(2, '0');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const hex = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16)/255);
+let lenis = null;
 
-/* ── Theme ── */
-const themeBtn = $('#themeBtn');
-function syncThemeBtn(){
-  const light = document.documentElement.dataset.theme === 'light';
-  themeBtn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
-}
-themeBtn.addEventListener('click', () => {
-  const light = document.documentElement.dataset.theme !== 'light';
-  if (light) document.documentElement.dataset.theme = 'light'; else delete document.documentElement.dataset.theme;
-  try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch(e){}
-  syncThemeBtn();
-});
-syncThemeBtn();
-
-/* ── Nav ── */
-const nav = $('#nav'), burger = $('#burger'), links = $('#navLinks');
-let lastY = scrollY;
-function setNav(open){ links.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); if (open) nav.classList.add('scrolled'); }
-burger.addEventListener('click', () => setNav(!links.classList.contains('open')));
-links.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && links.classList.contains('open')) { setNav(false); burger.focus(); } });
-
-/* ═════════════════════════════════════════════
-   3D HAIR — raw WebGL, one draw call.
-   Each strand is a polyline: it wraps over a spherical
-   crown, then falls with waves, wind and a "comb"
-   that parts the hair around the pointer.
-   ═════════════════════════════════════════════ */
-const Hair = (() => {
-  const cv = $('#hair');
-  let gl = null;
-  try { gl = cv.getContext('webgl', {antialias:true, alpha:false, powerPreference:'high-performance'}); } catch(e){}
-  if (!gl) { document.documentElement.classList.add('no-gl'); return { setShade(){} }; }
-
-  const small = matchMedia('(max-width: 860px)').matches;
-  const STR = small ? 900 : 1500, SEG = 40, V = SEG + 1;
-
-  const vs = `
-  precision highp float;
-  attribute float a_s; attribute vec4 a_r;
-  uniform float u_t, u_aspect, u_scroll, u_grow, u_offx, u_offy, u_tanh, u_camz, u_yaw;
-  uniform vec2 u_m; uniform float u_mf;
-  uniform vec3 u_c0, u_c1, u_c2;
-  varying vec3 v_c; varying float v_a;
-  const float R = .62; const float K = .24; const float PHI_END = 1.72;
-  void main(){
-    float s = a_s, th = a_r.x;
-    float sk = min(s / K, 1.);
-    float phi = mix(.04 + a_r.y * .22, PHI_END, sk);
-    float rr = R * (1. + a_r.z * .035);
-    vec3 p = vec3(rr*sin(phi)*sin(th), rr*cos(phi), rr*sin(phi)*cos(th));
-    vec3 e = vec3(rr*sin(PHI_END)*sin(th), rr*cos(PHI_END), rr*sin(PHI_END)*cos(th));
-    float f = max(s - K, 0.) / (1. - K);
-    vec2 outw = normalize(e.xz + 1e-4);
-    vec2 side = vec2(outw.y, -outw.x);
-    float L = 2.75 + a_r.z * .6;
-    float ph = f * 9.5 + th * 1.4 + a_r.w * .9;
-    float amp = .11 * smoothstep(0., .3, f) * (.75 + a_r.z * .5);
-    float wv = sin(ph - u_t * .55);
-    if (s > K) {
-      p = e;
-      p.y -= f * L;
-      p.xz += outw * (.16 * sin(f * 2.6) + .1 * f);
-      p.xz += side * wv * amp + outw * cos(ph - u_t * .55) * amp * .6;
-      p.x += sin(u_t * .4 + f * 2.2 + th) * .045 * f * f;
-      p.y += u_scroll * f * f * .5;
-      p.xz += outw * u_scroll * f * .6;
-    }
-    float cy = cos(u_yaw), sy = sin(u_yaw);
-    p.xz = mat2(cy, -sy, sy, cy) * p.xz;
-    p.x += u_offx; p.y += u_offy;
-    /* comb: strands part around the pointer, tips move most */
-    vec2 d = p.xy - u_m;
-    float k = exp(-dot(d, d) / .09) * smoothstep(0., .25, f) * u_mf;
-    p.x += sign(d.x) * k * .28;
-    p.z += k * .2;
-    float z = u_camz - p.z;
-    float sc = 1. / (z * u_tanh);
-    gl_Position = vec4(p.x * sc / u_aspect, p.y * sc, 0., 1.);
-    /* colour: root → mid → hand-painted ends, with ribbons */
-    float paint = smoothstep(.12 + a_r.z * .4, .9, f);
-    float rib = step(.64, fract(a_r.w * 7.31)) * smoothstep(.02, .45, f);
-    paint = max(paint, rib * .9);
-    vec3 col = mix(u_c0, u_c1, smoothstep(0., .5, s));
-    col = mix(col, u_c2, paint);
-    float light = .42 + .58 * max(cos(th + u_yaw * .6), 0.);
-    float sh = pow(max(cos(ph - u_t * .55 - .6), 0.), 14.) * smoothstep(0., .2, f);
-    float crown = exp(-pow((phi - .78) * 4.5, 2.)) * (1. - step(K, s));
-    col = col * light + (sh * .4 + crown * .3) * vec3(1., .93, .84) * (.5 + light * .5);
-    v_c = col;
-    v_a = (.42 + .34 * a_r.z) * (1. - smoothstep(.9, 1., f)) * (1. - smoothstep(u_grow - .12, u_grow, s));
-  }`;
-  const fs = `
-  precision mediump float;
-  varying vec3 v_c; varying float v_a;
-  void main(){ gl_FragColor = vec4(v_c, v_a); }`;
-
-  function sh(type, src){
-    const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o);
-    if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o));
-    return o;
-  }
-  let prog;
-  try {
-    prog = gl.createProgram();
-    gl.attachShader(prog, sh(gl.VERTEX_SHADER, vs));
-    gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, fs));
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
-  } catch(err) { console.warn(err); document.documentElement.classList.add('no-gl'); cv.hidden = true; return { setShade(){} }; }
-  gl.useProgram(prog);
-
-  /* geometry: deterministic random so the hair looks the same on every visit */
-  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  const data = new Float32Array(STR * V * 5);
-  const idx = new Uint16Array(STR * SEG * 2);
-  let o = 0, q = 0;
-  for (let i = 0; i < STR; i++) {
-    const u = rnd() * 2 - 1;
-    const th = Math.sign(u) * Math.pow(Math.abs(u), 1.1) * 1.45;
-    const r1 = rnd(), r2 = rnd(), r3 = rnd();
-    for (let j = 0; j < V; j++) {
-      data[o++] = j / SEG; data[o++] = th; data[o++] = r1; data[o++] = r2; data[o++] = r3;
-    }
-    const b = i * V;
-    for (let j = 0; j < SEG; j++) { idx[q++] = b + j; idx[q++] = b + j + 1; }
-  }
-  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-  gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
-  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
-  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, idx, gl.STATIC_DRAW);
-  const aS = gl.getAttribLocation(prog, 'a_s'), aR = gl.getAttribLocation(prog, 'a_r');
-  gl.enableVertexAttribArray(aS); gl.vertexAttribPointer(aS, 1, gl.FLOAT, false, 20, 0);
-  gl.enableVertexAttribArray(aR); gl.vertexAttribPointer(aR, 4, gl.FLOAT, false, 20, 4);
-  const U = {};
-  ['u_t','u_aspect','u_scroll','u_grow','u_offx','u_offy','u_tanh','u_camz','u_yaw','u_m','u_mf','u_c0','u_c1','u_c2']
-    .forEach(n => U[n] = gl.getUniformLocation(prog, n));
-  gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  const bg = hex('#0B0605'); gl.clearColor(bg[0], bg[1], bg[2], 1);
-
-  const TANH = Math.tan(20 * Math.PI / 180), CAMZ = 4.2;
-  gl.uniform1f(U.u_tanh, TANH); gl.uniform1f(U.u_camz, CAMZ);
-
-  let W = 0, H = 0, aspect = 1;
-  function resize(){
-    const dpr = Math.min(devicePixelRatio || 1, small ? 1.75 : 2);
-    W = cv.clientWidth; H = cv.clientHeight; aspect = W / H;
-    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    gl.viewport(0, 0, cv.width, cv.height);
-  }
-  resize(); addEventListener('resize', resize);
-
-  /* colour state, eased toward the chosen shade */
-  let cur = shades[0].c.map(hex), tgt = cur.map(c => c.slice());
-  function setShade(i){ tgt = shades[i].c.map(hex); if (reduce || !running) { cur = tgt.map(c=>c.slice()); frame(performance.now()); } }
-
-  /* pointer → world coords on the z=0 plane */
-  let mx = 9, my = 9, tmx = 9, tmy = 9, mf = 0, tmf = 0;
-  const hero = $('#home');
-  hero.addEventListener('pointermove', e => {
-    const r = cv.getBoundingClientRect();
-    const nx = (e.clientX - r.left) / r.width * 2 - 1, ny = -((e.clientY - r.top) / r.height * 2 - 1);
-    tmx = nx * TANH * CAMZ * aspect; tmy = ny * TANH * CAMZ; tmf = 1;
-  });
-  hero.addEventListener('pointerleave', () => { tmf = 0; });
-
-  let scrollP = 0, grow = reduce ? 1.2 : 0, t0 = performance.now(), running = false, visible = true, raf = 0;
-  function frame(now){
-    const t = reduce ? 4 : (now - t0) / 1000;
-    if (!reduce) grow = Math.min(1.2, grow + .012);
-    for (let k = 0; k < 3; k++) for (let c = 0; c < 3; c++) cur[k][c] += (tgt[k][c] - cur[k][c]) * .05;
-    mx += (tmx - mx) * .08; my += (tmy - my) * .08; mf += (tmf - mf) * .05;
-    const wide = aspect > 1;
-    const offx = wide ? Math.min(1.05, TANH * CAMZ * aspect * .42) : 0;
-    const offy = wide ? .78 : .95;
-    const yaw = (reduce ? 0 : Math.sin(t * .18) * .12) + (mx / (TANH * CAMZ * Math.max(aspect,.5))) * .18 * mf + scrollP * .9;
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.uniform1f(U.u_t, t); gl.uniform1f(U.u_aspect, aspect); gl.uniform1f(U.u_scroll, scrollP);
-    gl.uniform1f(U.u_grow, grow); gl.uniform1f(U.u_offx, offx); gl.uniform1f(U.u_offy, offy);
-    gl.uniform1f(U.u_yaw, yaw); gl.uniform2f(U.u_m, mx, my); gl.uniform1f(U.u_mf, reduce ? 0 : mf);
-    gl.uniform3fv(U.u_c0, cur[0]); gl.uniform3fv(U.u_c1, cur[1]); gl.uniform3fv(U.u_c2, cur[2]);
-    gl.drawElements(gl.LINES, idx.length, gl.UNSIGNED_SHORT, 0);
-  }
-  function loop(now){ frame(now); raf = running ? requestAnimationFrame(loop) : 0; }
-  function setRun(){
-    const should = visible && !document.hidden && !reduce;
-    if (should && !running) { running = true; raf = requestAnimationFrame(loop); }
-    else if (!should) { running = false; cancelAnimationFrame(raf); }
-  }
-  new IntersectionObserver(([en]) => { visible = en.isIntersecting; setRun(); }).observe(hero);
-  document.addEventListener('visibilitychange', setRun);
-  addEventListener('scroll', () => {
-    scrollP = Math.min(1, Math.max(0, scrollY / hero.offsetHeight));
-    if (reduce) frame(0);
-  }, {passive:true});
-  if (reduce) frame(0); else setRun();
-  return { setShade };
-})();
-
-/* shade buttons */
-$('#shades').innerHTML = shades.map((s, i) =>
-  `<button type="button" class="shade" aria-pressed="${i===0}" aria-label="${esc(s.name)} shade" data-i="${i}" style="--sw:linear-gradient(160deg,${s.c[0]} 10%,${s.c[1]} 45%,${s.c[2]} 95%)"><i></i><span>${esc(s.name)}</span></button>`
-).join('');
-$('#shades').addEventListener('click', e => {
-  const b = e.target.closest('.shade'); if (!b) return;
-  document.querySelectorAll('.shade').forEach(x => x.setAttribute('aria-pressed', x === b));
-  Hair.setShade(+b.dataset.i);
-});
-
-/* ═════════════════════════════════════════════
-   WORK — horizontal pinned gallery
-   ═════════════════════════════════════════════ */
-const hs = $('#hs'), track = $('#track'), bar = $('#hsBar');
-const horizQ = matchMedia('(min-width: 861px) and (prefers-reduced-motion: no-preference)');
-let list = reals, dist = 0;
-
-const present = Object.keys(CATS).filter(c => reals.some(r => r.cat === c));
-$('#filters').innerHTML = [['all','All',reals.length], ...present.map(c => [c, CATS[c], reals.filter(r => r.cat === c).length])]
-  .map(([k,l,n]) => `<button type="button" class="f" data-f="${k}" aria-pressed="${k==='all'}">${l}<sup>${n}</sup></button>`).join('');
-$('#filters').addEventListener('click', e => {
-  const b = e.target.closest('.f'); if (!b) return;
-  document.querySelectorAll('.f').forEach(x => x.setAttribute('aria-pressed', x === b));
-  list = b.dataset.f === 'all' ? reals : reals.filter(r => r.cat === b.dataset.f);
-  renderWork();
-  const top = hs.getBoundingClientRect().top + scrollY - (horizQ.matches ? 0 : 120);
-  if (scrollY > top) scrollTo({top, behavior: reduce ? 'auto' : 'smooth'});
-});
-
-function renderWork(){
-  track.innerHTML = list.map((r, i) => `
-    <figure class="w-item">
-      <button type="button" class="w-btn" data-i="${i}" aria-label="View ${esc(r.name)}">
-        <img src="${esc(r.img)}" alt="${esc(r.name)} — ${esc(CATS[r.cat])} by Clotilde" loading="${i < 4 ? 'eager' : 'lazy'}" decoding="async" width="900" height="1200">
-      </button>
-      <figcaption class="w-cap">
-        <span class="w-no">N°${pad(i+1)}</span>
-        <span class="w-name">${esc(r.name)}</span>
-        <span class="w-cat">${esc(CATS[r.cat])}</span>
-      </figcaption>
-    </figure>`).join('');
-  $('#hsTot').textContent = pad(list.length);
-  layoutHS();
-}
-function layoutHS(){
-  const horiz = horizQ.matches;
-  hs.classList.toggle('flat', !horiz);
-  if (!horiz) { hs.style.height = ''; track.style.transform = ''; return; }
-  dist = Math.max(0, track.scrollWidth - innerWidth);
-  hs.style.height = (dist + innerHeight) + 'px';
-  onScrollHS();
-}
-function onScrollHS(){
-  if (!horizQ.matches) return;
-  const r = hs.getBoundingClientRect();
-  const p = Math.min(1, Math.max(0, -r.top / Math.max(1, hs.offsetHeight - innerHeight)));
-  track.style.transform = `translate3d(${(-p * dist).toFixed(1)}px,0,0)`;
-  bar.style.transform = `scaleX(${p})`;
-  $('#hsNow').textContent = pad(Math.min(list.length, 1 + Math.round(p * (list.length - 1))));
-}
-/* keyboard: tabbing to an off-screen look scrolls it into view */
-track.addEventListener('focusin', e => {
-  if (!horizQ.matches) return;
-  const it = e.target.closest('.w-item'); if (!it) return;
-  const target = Math.min(dist, Math.max(0, it.offsetLeft - innerWidth * .3));
-  const top = hs.getBoundingClientRect().top + scrollY + (dist ? target / dist : 0) * (hs.offsetHeight - innerHeight);
-  scrollTo({top, behavior:'auto'});
-});
-track.addEventListener('click', e => { const b = e.target.closest('.w-btn'); if (b) openLB(+b.dataset.i); });
-addEventListener('resize', layoutHS);
-horizQ.addEventListener('change', layoutHS);
-track.addEventListener('load', e => { if (e.target.tagName === 'IMG') layoutHS(); }, true);
+/* ── Collage: each piece tells the cut line which side to pass on ── */
+$('#collage').innerHTML = reals.map((r, i) => {
+  const side = [0.76, 0.3, 0.84, 0.22][i % 4];
+  return `
+  <figure class="piece" data-cut="${side}@0.55">
+    <button type="button" class="piece-btn reveal" data-i="${i}" aria-label="View ${esc(r.name)}">
+      <img src="${esc(r.img)}" alt="${esc(r.name)} — ${esc(CATS[r.cat])} by Clotilde" loading="lazy" decoding="async" width="900" height="1200">
+    </button>
+    <figcaption><span class="n">${pad(i+1)}</span><span class="t">${esc(r.name)}</span><span class="c">${esc(CATS[r.cat])}</span></figcaption>
+  </figure>`;
+}).join('');
+$('#workCount').textContent = `${reals.length} looks`;
 
 /* ── Lightbox ── */
 const lb = $('#lb'); let lbI = 0, lbFrom = null;
 function fillLB(){
-  const r = list[lbI];
+  const r = reals[lbI];
   $('#lbImg').innerHTML = `<img src="${esc(r.img)}" alt="${esc(r.name)} — ${esc(CATS[r.cat])} by Clotilde">`;
-  $('#lbNo').textContent = `N°${pad(lbI+1)} / ${pad(list.length)}`;
+  $('#lbN').textContent = `${pad(lbI+1)} / ${pad(reals.length)}`;
   $('#lbCat').textContent = CATS[r.cat];
   $('#lbName').textContent = r.name;
   $('#lbDesc').textContent = r.desc;
 }
-function openLB(i){ lbI = i; lbFrom = document.activeElement; fillLB(); lb.showModal(); document.body.style.overflow = 'hidden'; }
-function stepLB(d){ lbI = (lbI + d + list.length) % list.length; fillLB(); }
+$('#collage').addEventListener('click', e => {
+  const b = e.target.closest('.piece-btn'); if (!b) return;
+  lbI = +b.dataset.i; lbFrom = b; fillLB(); lb.showModal(); if (lenis) lenis.stop();
+});
+const stepLB = d => { lbI = (lbI + d + reals.length) % reals.length; fillLB(); };
 $('#lbPrev').addEventListener('click', () => stepLB(-1));
 $('#lbNext').addEventListener('click', () => stepLB(1));
 $('#lbX').addEventListener('click', () => lb.close());
-lb.addEventListener('close', () => { document.body.style.overflow = ''; if (lbFrom) lbFrom.focus({preventScroll:true}); });
+lb.addEventListener('close', () => { if (lenis) lenis.start(); if (lbFrom) lbFrom.focus({preventScroll:true}); });
 lb.addEventListener('click', e => { if (e.target === lb || e.target.id === 'lbImg') lb.close(); });
 lb.addEventListener('keydown', e => { if (e.key === 'ArrowRight') stepLB(1); if (e.key === 'ArrowLeft') stepLB(-1); });
 
-/* ── Videos ── */
-if (vids.length) {
-  $('#vgrid').innerHTML = vids.map(v => `
-    <div class="vc">
-      <div class="vc-thumb" id="vt${v.id}">
-        ${v.thumb ? `<img src="${esc(v.thumb)}" alt="" loading="lazy">` : ''}
-        <button type="button" class="play" data-id="${v.id}" aria-label="Play ${esc(v.title)}">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21"/></svg>
-        </button>
-      </div>
-      <p class="vc-name">${esc(v.title)}</p>
-      <p class="vc-desc">${esc(v.desc)}</p>
-    </div>`).join('');
-  $('#vgrid').addEventListener('click', e => {
-    const b = e.target.closest('.play'); if (!b) return;
-    const v = vids.find(x => x.id === +b.dataset.id), el = $('#vt' + v.id);
-    const vid = document.createElement('video');
-    vid.src = v.src; vid.controls = true; vid.autoplay = true; vid.playsInline = true;
-    el.replaceChildren(vid);
-  });
-} else {
-  document.querySelectorAll('[data-vid]').forEach(el => el.hidden = true);
+/* ── Smooth scroll ── */
+if (!reduce && window.Lenis) {
+  lenis = new Lenis({ lerp: .085, smoothWheel: true });
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const t = id === '#top' ? 0 : $(id);
+    if (t === null) return;
+    e.preventDefault(); lenis.scrollTo(t, { duration: 1.6 });
+  }));
 }
 
 /* ═════════════════════════════════════════════
-   SCROLL EFFECTS
+   THE CUT LINE — built from data-cut anchors so it
+   always threads between the photos, whatever the layout.
    ═════════════════════════════════════════════ */
-/* statement: words light up as you read */
-const st = $('#stText');
-(function split(node){
-  [...node.childNodes].forEach(n => {
-    if (n.nodeType === 3) {
-      const frag = document.createDocumentFragment();
-      n.textContent.split(/(\s+)/).forEach(w => {
-        if (!w) return;
-        if (/^\s+$/.test(w)) frag.append(w);
-        else { const s = document.createElement('span'); s.className = 'w'; s.textContent = w; frag.append(s); }
-      });
-      n.replaceWith(frag);
-    } else split(n);
+const page = $('#page'), svg = $('#cutSvg'), guide = $('#guide'), done = $('#done');
+let table = [], total = 0;
+
+function buildPath(){
+  const pr = page.getBoundingClientRect(), W = pr.width, top = pr.top + scrollY;
+  const narrow = innerWidth < 900;
+  const cover = $('.cover');
+  const ch = cover.offsetHeight;
+  const pts = [narrow ? [W - 9, ch - 2] : [W * .62, ch * .985]];
+  /* data-cut="x@y x@y …" — fractions of the page width / the element's height */
+  document.querySelectorAll('[data-cut]').forEach(el => {
+    const r = el.getBoundingClientRect();
+    el.dataset.cut.trim().split(/\s+/).forEach(pair => {
+      const [fx, fy = .5] = pair.split('@').map(Number);
+      const x = narrow ? (fx > .5 ? W - 9 : 9) : W * fx;   /* on phones the line runs in the margins */
+      pts.push([x, r.top + scrollY - top + r.height * fy]);
+    });
   });
-})(st);
-const words = [...st.querySelectorAll('.w')];
-const stImg = $('#stImg');
-
-function onScroll(){
-  const y = scrollY;
-  nav.classList.toggle('scrolled', y > innerHeight * .85 || links.classList.contains('open'));
-  nav.classList.toggle('away', y > lastY && y > innerHeight && !links.classList.contains('open'));
-  lastY = y;
-  if (!reduce) {
-    const r = st.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
-    const n = Math.round(p * words.length);
-    words.forEach((w, i) => w.classList.toggle('on', i < n));
-    const ir = stImg.parentElement.getBoundingClientRect();
-    const ip = (ir.top + ir.height / 2 - innerHeight / 2) / innerHeight;
-    stImg.style.transform = `translate3d(0,${(-8 + ip * 10).toFixed(2)}%,0)`;
+  /* Catmull-Rom → cubic Bézier */
+  let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
   }
-  onScrollHS();
+  svg.setAttribute('viewBox', `0 0 ${W} ${pr.height}`);
+  guide.setAttribute('d', d); done.setAttribute('d', d);
+  total = guide.getTotalLength();
+  done.style.strokeDasharray = `${total} ${total}`;
+  table = [];
+  const N = Math.ceil(total / 6);
+  for (let i = 0; i <= N; i++) { const l = total * i / N, p = guide.getPointAtLength(l); table.push([l, p.x, p.y]); }
 }
-addEventListener('scroll', onScroll, {passive:true});
 
-/* reveal on enter */
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold:.15});
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+/* where on the line are we? the point whose y sits ~46% down the viewport */
+function sample(scrollTop){
+  if (!table.length) return null;
+  const pageTop = page.getBoundingClientRect().top + scrollY;
+  const yTarget = scrollTop + innerHeight * .46 - pageTop;
+  let lo = 0, hi = table.length - 1;
+  if (yTarget <= table[0][2]) hi = 0;
+  else if (yTarget >= table[hi][2]) lo = hi;
+  else while (hi - lo > 1) { const m = (lo + hi) >> 1; if (table[m][2] < yTarget) lo = m; else hi = m; }
+  const a = table[lo], b = table[hi];
+  const k = b[2] === a[2] ? 0 : Math.min(1, Math.max(0, (yTarget - a[2]) / (b[2] - a[2])));
+  const L = a[0] + (b[0] - a[0]) * k;
+  const p = guide.getPointAtLength(L), q = guide.getPointAtLength(Math.min(total, L + 4)), o = guide.getPointAtLength(Math.max(0, L - 4));
+  return { L, x: p.x, y: p.y - (scrollTop - pageTop), ang: Math.atan2(q.y - o.y, q.x - o.x) };
+}
 
-/* ── Init ── */
-renderWork();
-onScroll();
+/* ═════════════════════════════════════════════
+   3D SCISSORS — three.js, champagne-steel shears
+   that ride the line and snip as you scroll.
+   ═════════════════════════════════════════════ */
+const Shears = (() => {
+  const cv = $('#scissors');
+  if (!window.THREE) { cv.hidden = true; return null; }
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: cv, alpha: true, antialias: true }); }
+  catch (e) { cv.hidden = true; return null; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+
+  const scene = new THREE.Scene();
+  const cam = new THREE.OrthographicCamera(0, 1, 0, -1, -2000, 2000);
+
+  /* a soft studio for the steel to reflect: warm walls, light panels, a dark floor */
+  const pm = new THREE.PMREMGenerator(renderer);
+  const studio = new THREE.Scene();
+  studio.background = new THREE.Color(0xcbbba6);
+  const panel = (w, h, c, pos, rot) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: c, side: THREE.DoubleSide }));
+    m.position.set(pos[0], pos[1], pos[2]); m.rotation.set(rot[0], rot[1], rot[2]); studio.add(m);
+  };
+  panel(6, 2, 0xffffff, [0, 4, 0], [Math.PI / 2, 0, 0]);
+  panel(2, 5, 0xfff4e6, [-4, 0, 1], [0, Math.PI / 2, 0]);
+  panel(2, 5, 0xfaf0e2, [4, 1, -1], [0, -Math.PI / 2, 0]);
+  panel(12, 12, 0x3a2c24, [0, -4, 0], [Math.PI / 2, 0, 0]);
+  scene.environment = pm.fromScene(studio, .04).texture;
+  const key = new THREE.DirectionalLight(0xffffff, .6); key.position.set(-1, 1.5, 2); scene.add(key);
+
+  const steel = new THREE.MeshStandardMaterial({ color: 0xe8d6bd, metalness: 1, roughness: .2, side: THREE.DoubleSide });
+  const dark  = new THREE.MeshStandardMaterial({ color: 0x6b5242, metalness: .9, roughness: .35 });
+
+  function half(withTang){
+    const g = new THREE.Group();
+    const s = new THREE.Shape();
+    s.moveTo(-.15, -.28); s.lineTo(.2, -.28);
+    s.quadraticCurveTo(.25, 1.7, .03, 3.5);
+    s.quadraticCurveTo(-.03, 1.9, -.15, .45);
+    s.closePath();
+    g.add(new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: .05, bevelEnabled: true, bevelThickness: .018, bevelSize: .022, bevelSegments: 3, curveSegments: 28 }), steel));
+    g.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([
+      new THREE.Vector3(.02, -.2, .025), new THREE.Vector3(.12, -.85, .025), new THREE.Vector3(.36, -1.42, .025)
+    ]), 24, .075, 10), steel));
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(.43, .07, 18, 56), steel);
+    ring.position.set(.6, -1.88, .025); ring.scale.set(1, 1.12, 1); g.add(ring);
+    if (withTang) g.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([
+      new THREE.Vector3(.42, -2.3, .025), new THREE.Vector3(.2, -2.65, .025), new THREE.Vector3(.33, -3.0, .025), new THREE.Vector3(.5, -3.05, .025)
+    ]), 24, .05, 8), steel));
+    return g;
+  }
+  const A = half(true), B = half(false);
+  B.scale.x = -1; B.position.z = .1;
+  const screw = new THREE.Mesh(new THREE.CylinderGeometry(.12, .12, .26, 28), dark);
+  screw.rotation.x = Math.PI / 2; screw.position.z = .06;
+  const body = new THREE.Group(); body.add(A, B, screw);
+  body.position.y = -.25;
+  const tilt = new THREE.Group(); tilt.add(body);
+  const head = new THREE.Group(); head.add(tilt);
+  scene.add(head);
+
+  /* soft contact shadow on the "paper" */
+  const sc = document.createElement('canvas'); sc.width = sc.height = 128;
+  const sx = sc.getContext('2d'); const gr = sx.createRadialGradient(64, 64, 0, 64, 64, 64);
+  gr.addColorStop(0, 'rgba(70,48,34,.45)'); gr.addColorStop(1, 'rgba(70,48,34,0)'); sx.fillStyle = gr; sx.fillRect(0, 0, 128, 128);
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false }));
+  shadow.position.z = -500; scene.add(shadow);
+
+  let size = 40;
+  function resize(){
+    const W = innerWidth, H = innerHeight;
+    renderer.setSize(W, H, false);
+    cam.left = 0; cam.right = W; cam.top = 0; cam.bottom = -H; cam.updateProjectionMatrix();
+    size = W < 900 ? 17 : 40;            /* px per model unit (model ≈ 6.5 units long) */
+    head.scale.setScalar(size);
+    shadow.scale.set(size * 2.4, size * 6, 1);
+  }
+  resize(); addEventListener('resize', resize);
+
+  let open = .3, heading = 0, lastL = null, travel = 0, cx = null, cy = null;
+  function draw(s, t){
+    if (!s) return;
+    if (lastL === null) { lastL = s.L; cx = s.x; cy = s.y; heading = -s.ang - Math.PI / 2; }
+    const dL = s.L - lastL; lastL = s.L; travel += Math.abs(dL);
+    const target = reduce ? .22 : .05 + .32 * (.5 + .5 * Math.sin(travel * .05));
+    open += (target - open) * .25;
+    A.rotation.z = open; B.rotation.z = -open;
+    /* tips point along the line, in the direction of travel (down the page) */
+    const want = -s.ang - Math.PI / 2;
+    heading += Math.atan2(Math.sin(want - heading), Math.cos(want - heading)) * .15;
+    head.rotation.z = heading;
+    tilt.rotation.y = reduce ? .45 : .45 + Math.sin(t * .0011) * .3 + Math.max(-.4, Math.min(.4, dL * .012));
+    tilt.rotation.x = reduce ? -.2 : -.2 + Math.cos(t * .0009) * .1;
+    cx += (s.x - cx) * .3; cy += (s.y - cy) * .3;
+    head.position.set(cx, -cy, 0);
+    shadow.position.set(cx + 16, -cy - 20, -500);
+    shadow.rotation.z = heading;
+    renderer.render(scene, cam);
+  }
+  return { draw };
+})();
+
+/* ═════════════════════════════════════════════
+   LOOP
+   ═════════════════════════════════════════════ */
+const hdr = $('#hdr'), fig = $('#coverFig');
+let lastY = 0;
+function frame(t){
+  if (lenis) lenis.raf(t);
+  const y = lenis ? lenis.scroll : scrollY;
+  const s = sample(y);
+  if (s && total) done.style.strokeDashoffset = (total - s.L).toFixed(1);
+  if (Shears) Shears.draw(s, t);
+  if (y > lastY + 1 && y > innerHeight * .6) hdr.classList.add('away');
+  else if (y < lastY - 1 || y < 40) hdr.classList.remove('away');
+  hdr.classList.toggle('solid', y > innerHeight * .6);
+  lastY = y;
+  /* cover: the figure rises a little faster than the name */
+  if (!reduce && y < innerHeight * 1.2) fig.style.transform = `translate3d(0,${(-y * .12).toFixed(1)}px,0)`;
+  requestAnimationFrame(frame);
+}
+
+/* photos unveil top-down as they arrive */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* rebuild the line whenever the layout moves */
+let rb = 0;
+const rebuild = () => { cancelAnimationFrame(rb); rb = requestAnimationFrame(buildPath); };
+new ResizeObserver(rebuild).observe(page);
+if (document.fonts) document.fonts.ready.then(rebuild);
+addEventListener('load', rebuild);
+
+buildPath();
+requestAnimationFrame(frame);
 requestAnimationFrame(() => document.documentElement.classList.add('ready'));
 </script>
 </body>
